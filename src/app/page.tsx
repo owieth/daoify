@@ -8,14 +8,15 @@ const styles = {
     'items-center',
     'min-h-screen',
     'p-24',
-    'overflow-x-hidden'
   ].join(' '),
 }
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <GridVector />
+      <div className='absolute top-0'>
+        <GridVector />
+      </div>
     </main>
   )
 }
