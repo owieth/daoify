@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -15,16 +15,17 @@ const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
   const isActive = usePathname() === href;
 
   const styles = {
-    link: ({ isActive }: { isActive: boolean }) => [
-      'block',
-      'relative',
-      'px-3',
-      'py-2',
-      'text-white/50',
-      'transition',
-      'transition-color',
-      isActive ? 'text-white' : 'hover:text-white/80'
-    ].join(' '),
+    link: ({ isActive }: { isActive: boolean }) =>
+      [
+        'block',
+        'relative',
+        'px-3',
+        'py-2',
+        'text-white/50',
+        'transition',
+        'transition-color',
+        isActive ? 'text-white' : 'hover:text-white/80',
+      ].join(' '),
     activeLink: [
       'absolute',
       'inset-x-1',
@@ -34,31 +35,22 @@ const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
       'from-white/0',
       'via-white/40',
       'to-white/0',
-    ].join(' ')
-  }
+    ].join(' '),
+  };
 
   return (
     <li>
-      <Link
-        href={href}
-        className={styles.link({ isActive })}
-      >
+      <Link href={href} className={styles.link({ isActive })}>
         {children}
-        {isActive && (
-          <span className={styles.activeLink} />
-        )}
+        {isActive && <span className={styles.activeLink} />}
       </Link>
-    </li >
+    </li>
   );
-}
+};
 
 const DesktopNavigation = () => {
   const styles = {
-    nav: [
-      'hidden',
-      'pointer-events-auto',
-      'md:block'
-    ].join(' '),
+    nav: ['hidden', 'pointer-events-auto', 'md:block'].join(' '),
     bar: [
       'flex',
       'rounded-full',
@@ -74,7 +66,7 @@ const DesktopNavigation = () => {
       'ring-1',
       'ring-zinc-900/5',
       'backdrop-blur',
-    ].join(' ')
+    ].join(' '),
   };
 
   return (
@@ -88,17 +80,11 @@ const DesktopNavigation = () => {
       </ul>
     </nav>
   );
-}
+};
 
 const Header = () => {
   const styles = {
-    header: [
-      'relative',
-      'flex',
-      'flex-col',
-      'h-24',
-      'z-10'
-    ].join(' '),
+    header: ['relative', 'flex', 'flex-col', 'h-24', 'z-10'].join(' '),
     link: [
       'absolute',
       'top-0',
@@ -107,7 +93,7 @@ const Header = () => {
       'flex-1',
       'justify-center',
       'items-center',
-      'h-24'
+      'h-24',
     ].join(' '),
     wrapper: [
       'absolute',
@@ -120,23 +106,18 @@ const Header = () => {
       'h-24',
       'p-6',
       'z-15',
-      'lg:justify-center'
-    ].join(' ')
+      'lg:justify-center',
+    ].join(' '),
   };
 
   return (
     <>
       <header className={styles.header}>
-        <Link
-          href="/"
-          className={styles.link}
-        >
+        <Link href="/" className={styles.link}>
           {/* <Logo className={''} width={128} height={128} /> */}
         </Link>
 
-        <div
-          className={styles.wrapper}
-        >
+        <div className={styles.wrapper}>
           <div className="relative flex gap-4">
             <DesktopNavigation />
           </div>
@@ -144,6 +125,6 @@ const Header = () => {
       </header>
     </>
   );
-}
+};
 
 export default Header;
