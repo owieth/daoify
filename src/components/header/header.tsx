@@ -89,7 +89,7 @@ const Header = () => {
       'h-24',
     ].join(' '),
     wrapper: [
-      'absolute',
+      'sticky',
       'top-0',
       'left-2/4',
       'flex',
