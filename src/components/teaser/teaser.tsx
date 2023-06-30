@@ -23,6 +23,8 @@ const styles = {
     'backdrop-blur-md',
     'hover:bg-white/10',
     'transition-all',
+    'shadow-lg',
+    'shadow-zinc-800/50',
   ].join(' '),
   button: [
     'items-center',

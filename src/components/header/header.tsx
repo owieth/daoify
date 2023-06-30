@@ -57,13 +57,7 @@ const DesktopNavigation = () => {
       'border',
       'border-white/10',
       'text-sm',
-      'font-medium',
       'px-3',
-      'text-zinc-800',
-      'shadow-lg',
-      'shadow-zinc-800/50',
-      'ring-1',
-      'ring-zinc-900/5',
       'backdrop-blur',
     ].join(' '),
   };
