@@ -1,4 +1,5 @@
 import GridVector from '@/components/grid-vector/grid-vector';
+import Teaser from '@/components/teaser/teaser';
 
 const styles = {
   main: [
@@ -17,6 +18,8 @@ export default function Home() {
       <div className="absolute top-0 -z-10">
         <GridVector />
       </div>
+
+      <Teaser />
 
       <h1>Latest Legal Wrapper</h1>
     </main>
