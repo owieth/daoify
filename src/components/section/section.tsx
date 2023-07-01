@@ -6,7 +6,7 @@ type Props = {
 
 const Section = ({ children }: Props) => {
   return (
-    <section className="flex justify-center w-full mt-32">
+    <section className="flex flex-col items-center w-full mt-32">
       {children}
     </section>
   );

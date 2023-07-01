@@ -23,7 +23,11 @@ export default function Home() {
 
       <Section>
         <h1 className='text-lg'>Latest Legal Wrapper</h1>
+        <span className='text-base text-center w-2/4'>
+          Zero code, maximum speed. Make professional sites easy, fast and fun
+          while delivering best-in-class SEO, performance.
+        </span>
       </Section>
-    </main>
+    </main >
   );
 }
