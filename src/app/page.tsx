@@ -3,13 +3,7 @@ import Section from '@/components/section/section';
 import Teaser from '@/components/teaser/teaser';
 
 const styles = {
-  main: [
-    'flex',
-    'flex-col',
-    'items-center',
-    'min-h-screen',
-    'p-24',
-  ].join(' '),
+  main: ['flex', 'flex-col', 'items-center', 'min-h-screen', 'p-24'].join(' '),
 };
 
 export default function Home() {
@@ -22,12 +16,16 @@ export default function Home() {
       <Teaser />
 
       <Section>
-        <h1 className='text-lg'>Latest Legal Wrapper</h1>
-        <span className='text-base text-center w-2/4'>
+        <h1 className="text-lg font-bold">Latest Legal Wrapper</h1>
+        <span className="w-2/4 text-center text-base">
           Zero code, maximum speed. Make professional sites easy, fast and fun
           while delivering best-in-class SEO, performance.
         </span>
       </Section>
-    </main >
+
+      <Section>
+        <p>jsdfölds</p>
+      </Section>
+    </main>
   );
 }

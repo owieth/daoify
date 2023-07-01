@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { type ReactNode } from 'react';
+import Logo from '../logo/logo';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -81,12 +82,15 @@ const Header = () => {
     link: [
       'absolute',
       'top-0',
-      'left-6',
+      'left-0',
       'flex',
       'flex-1',
       'justify-center',
       'items-center',
-      'h-24',
+      'border',
+      'border-white/10',
+      'rounded-full',
+      'bg-black/80',
     ].join(' '),
     wrapper: [
       'sticky',
@@ -96,8 +100,7 @@ const Header = () => {
       'flex-1',
       'justify-end',
       'items-center',
-      'h-24',
-      'p-6',
+      'p-8',
       'z-15',
       'lg:justify-center',
     ].join(' '),
@@ -107,7 +110,7 @@ const Header = () => {
     <>
       <header className={styles.header}>
         <Link href="/" className={styles.link}>
-          {/* <Logo className={''} width={128} height={128} /> */}
+          <Logo height={24} width={24} />
         </Link>
 
         <div className={styles.wrapper}>

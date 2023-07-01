@@ -1,12 +1,12 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
-}
+};
 
 const Section = ({ children }: Props) => {
   return (
-    <section className="flex flex-col items-center w-full mt-32">
+    <section className="mt-32 flex w-full flex-col items-center">
       {children}
     </section>
   );
