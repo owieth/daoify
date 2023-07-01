@@ -1,4 +1,5 @@
 import GridVector from '@/components/grid-vector/grid-vector';
+import Section from '@/components/section/section';
 import Teaser from '@/components/teaser/teaser';
 
 const styles = {
@@ -20,7 +21,9 @@ export default function Home() {
 
       <Teaser />
 
-      <h1 className='text-lg'>Latest Legal Wrapper</h1>
+      <Section>
+        <h1 className='text-lg'>Latest Legal Wrapper</h1>
+      </Section>
     </main>
   );
 }
