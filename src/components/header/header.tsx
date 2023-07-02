@@ -78,43 +78,30 @@ const DesktopNavigation = () => {
 
 const Header = () => {
   const styles = {
-    header: ['relative', 'flex', 'flex-col', 'h-24', 'z-10'].join(' '),
+    header: ['fixed', 'left-0', 'right-0', 'top-8', 'z-50'].join(' '),
     link: [
-      'absolute',
-      'top-0',
-      'left-0',
-      'flex',
-      'flex-1',
+      'inline-flex',
       'justify-center',
       'items-center',
+      'w-fit',
+      'rounded-full',
       'border',
       'border-white/10',
-      'rounded-full',
       'bg-black/80',
+      'p-3',
+      'backdrop-blur-sm',
     ].join(' '),
-    wrapper: [
-      'sticky',
-      'top-0',
-      'left-2/4',
-      'flex',
-      'flex-1',
-      'justify-end',
-      'items-center',
-      'p-8',
-      'z-15',
-      'lg:justify-center',
-    ].join(' '),
+    wrapper: ['col-span-3', 'hidden', 'justify-center ', 'sm:flex'].join(' '),
   };
 
   return (
     <>
       <header className={styles.header}>
-        <Link href="/" className={styles.link}>
-          <Logo height={24} width={24} />
-        </Link>
-
-        <div className={styles.wrapper}>
-          <div className="relative flex gap-4">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-2 items-center px-4 sm:grid-cols-5 sm:px-6 lg:px-8">
+          <Link href="/" className={styles.link}>
+            <Logo height={24} width={24} />
+          </Link>
+          <div className={styles.wrapper}>
             <DesktopNavigation />
           </div>
         </div>
