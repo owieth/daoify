@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
+    "@react-spring/web": "^9.7.3",
+    "cobe": "^0.6.3",
     "next": "13.4.7",
     "prettier": "^2.8.6",
     "prettier-plugin-tailwindcss": "^0.2.6",
