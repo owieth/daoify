@@ -1,6 +1,7 @@
 import Cobe from '@/components/cobe/cobe';
 import Features from '@/components/features/features';
 import GridVector from '@/components/grid-vector/grid-vector';
+import Keyboard from '@/components/keyboard/keyboard';
 import Section from '@/components/section/section';
 import Teaser from '@/components/teaser/teaser';
 import Image from 'next/image';
@@ -46,6 +47,10 @@ export default function Home() {
         <div className="relative p-16 lg:p-24">
           <Features />
         </div>
+      </Section>
+
+      <Section>
+        <Keyboard />
       </Section>
 
       <Section>
