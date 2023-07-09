@@ -51,13 +51,17 @@ export default function Home() {
       </Section>
 
       <Section>
-        <Keyboard />
+        <h2 className="text-md font-bold pb-4">Always at your command</h2>
+        <span className="text-center text-base"></span>
+
+        <div className="relative flex flex-col items-center h-full w-full rounded-xl border border-line overflow-hidden p-4 lg:p-6">
+          <Keyboard />
+        </div>
       </Section>
 
       <Section>
         <Cobe />
       </Section>
-
 
       <Section>
         <Analytics />
