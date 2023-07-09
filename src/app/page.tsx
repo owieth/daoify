@@ -1,3 +1,4 @@
+import Analytics from '@/components/analytics/analytics';
 import Cobe from '@/components/cobe/cobe';
 import Features from '@/components/features/features';
 import GridVector from '@/components/grid-vector/grid-vector';
@@ -56,6 +57,11 @@ export default function Home() {
       <Section>
         <Cobe />
       </Section>
-    </main>
+
+
+      <Section>
+        <Analytics />
+      </Section>
+    </main >
   );
 }
