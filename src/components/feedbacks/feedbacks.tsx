@@ -7,7 +7,7 @@ const Feedback = () => (
 const Feedbacks = () => {
 
   return (
-    <ul className="w-full animate-marquee-infinite">
+    <ul className="w-full animate-marquee-infinite hover:pause">
       <Feedback />
       <Feedback />
       <Feedback />
