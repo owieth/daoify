@@ -1,6 +1,7 @@
 import Analytics from '@/components/analytics/analytics';
 import Cobe from '@/components/cobe/cobe';
 import Features from '@/components/features/features';
+import Feedbacks from '@/components/feedbacks/feedbacks';
 import GridVector from '@/components/grid-vector/grid-vector';
 import Keyboard from '@/components/keyboard/keyboard';
 import Section from '@/components/section/section';
@@ -31,7 +32,7 @@ export default function Home() {
         <h1 className="text-lg font-bold">Latest Legal Wrapper</h1>
         <span className="w-2/4 text-center text-base">
           Zero code, maximum speed. Make professional sites easy, fast and fun
-          while delivering best-in-class SEO, performance.
+          while delivering best-in-className SEO, performance.
         </span>
       </Section>
 
@@ -60,6 +61,7 @@ export default function Home() {
       </Section>
 
       <Section>
+        <Feedbacks />
         <Cobe />
       </Section>
 
