@@ -109,6 +109,6 @@ const Cobe = () => {
       }}
     />
   );
-}
+};
 
 export default Cobe;

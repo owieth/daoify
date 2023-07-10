@@ -19,7 +19,7 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        line: '#19191A'
+        line: '#19191A',
       },
       keyframes: {
         marquee: {
@@ -32,7 +32,8 @@ module.exports = {
         },
       },
       animation: {
-        'marquee-infinite': 'marquee 25s linear infinite',
+        marquee: 'marquee 60s linear infinite',
+        marquee2: 'marquee2 25s linear infinite',
       },
     },
   },

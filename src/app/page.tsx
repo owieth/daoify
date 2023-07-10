@@ -52,22 +52,26 @@ export default function Home() {
       </Section>
 
       <Section>
-        <h2 className="text-md font-bold pb-4">Always at your command</h2>
+        <h2 className="pb-4 text-md font-bold">Always at your command</h2>
         <span className="text-center text-base"></span>
 
-        <div className="relative flex flex-col items-center h-full w-full rounded-xl border border-line overflow-hidden p-4 lg:p-6">
+        <div className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-xl border border-line p-4 lg:p-6">
           <Keyboard />
         </div>
       </Section>
 
       <Section>
-        <Feedbacks />
-        <Cobe />
+        <div className="relative">
+          <div className="absolute bottom-0 top-0 z-50 flex items-center justify-center">
+            <Feedbacks />
+          </div>
+          <Cobe />
+        </div>
       </Section>
 
       <Section>
         <Analytics />
       </Section>
-    </main >
+    </main>
   );
 }

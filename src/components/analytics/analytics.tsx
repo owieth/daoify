@@ -1,6 +1,6 @@
-import GridVector from "../grid-vector/grid-vector";
+import GridVector from '../grid-vector/grid-vector';
 
-const Analytic = ({ label, value }: { label: string, value: number }) => {
+const Analytic = ({ label, value }: { label: string; value: number }) => {
   const styles = {
     number: [
       'text-md',
@@ -13,15 +13,13 @@ const Analytic = ({ label, value }: { label: string, value: number }) => {
       'from-white',
       'from-50%',
       'via-black',
-      'to-black'
-    ].join(' ')
+      'to-black',
+    ].join(' '),
   };
 
   return (
     <div className="text-center">
-      <h2 className={styles.number}>
-        {value}
-      </h2>
+      <h2 className={styles.number}>{value}</h2>
       <span className="text-sm">{label}</span>
     </div>
   );
@@ -29,7 +27,7 @@ const Analytic = ({ label, value }: { label: string, value: number }) => {
 
 const Analytics = () => {
   return (
-    <div className="relative flex flex-col items-center h-full w-full rounded-xl border border-line overflow-hidden p-16 lg:p-24">
+    <div className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-xl border border-line p-16 lg:p-24">
       {/* <div className="absolute top-0">
         <GridVector />
       </div> */}
@@ -37,7 +35,7 @@ const Analytics = () => {
       <span className="text-center text-base">Analytics</span>
       <h2 className="text-md font-bold">Some numbers about us</h2>
 
-      <div className="flex justify-between items-center w-full relative pt-16">
+      <div className="relative flex w-full items-center justify-between pt-16">
         <Analytic label="Successful projects" value={750} />
         <Analytic label="Years of experience" value={145} />
         <Analytic label="Satisfied clients" value={526} />
@@ -45,6 +43,6 @@ const Analytics = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Analytics;
