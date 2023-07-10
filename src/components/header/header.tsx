@@ -6,10 +6,9 @@ import { type ReactNode } from 'react';
 import Logo from '../logo/logo';
 
 const navigation = [
-  { name: 'Home', href: '/' },
   { name: 'About', href: '/' },
-  { name: 'Events', href: '#' },
-  { name: 'Blog', href: '/#' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Sign Up', href: '/join' },
 ];
 
 const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
@@ -66,7 +65,7 @@ const DesktopNavigation = () => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.bar}>
-        {navigation.slice(1).map((item, i) => (
+        {navigation.map((item, i) => (
           <NavItem key={i} href={item.href}>
             {item.name}
           </NavItem>
