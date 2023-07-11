@@ -15,8 +15,8 @@ const styles = {
     'flex-col',
     'items-center',
     'min-h-screen',
-    'p-6 lg:p-16',
     'pt-48',
+    'px-6 lg:px-16',
   ].join(' '),
 };
 
