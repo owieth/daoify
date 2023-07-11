@@ -1,20 +1,23 @@
 import { ReactNode } from 'react';
 
 type Props = {
-  margin?: number;
+  small?: boolean
   children: ReactNode;
 };
 
-const Section = ({ margin, children }: Props) => {
+const Section = ({ small: margin, children }: Props) => {
   const styles = {
     section: [
-      margin ? `mt-${margin}` : 'mt-[400px]',
+      margin ? 'mt-[128px]' : 'mt-[400px]',
       'flex',
       'flex-col',
       'items-center',
       'w-full'
     ].join(' ')
   };
+
+  console.log(styles);
+
 
   return (
     <section className={styles.section}>

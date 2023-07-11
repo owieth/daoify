@@ -29,7 +29,7 @@ export default function Home() {
 
       <Teaser />
 
-      <Section margin={32}>
+      <Section small>
         <h1 className="text-lg font-bold">Latest Legal Wrapper</h1>
         <span className="w-2/4 text-center text-base">
           Zero code, maximum speed. Make professional sites easy, fast and fun
@@ -37,7 +37,7 @@ export default function Home() {
         </span>
       </Section>
 
-      <Section margin={32}>
+      <Section small>
         <div className="relative p-16 lg:p-24">
           <Image src={'/dashboard.svg'} alt="" height={800} width={1600} />
         </div>
