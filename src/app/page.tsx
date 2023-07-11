@@ -15,7 +15,7 @@ const styles = {
     'flex-col',
     'items-center',
     'min-h-screen',
-    'p-24',
+    'p-6 lg:p-16',
     'pt-48',
   ].join(' '),
 };
@@ -30,15 +30,15 @@ export default function Home() {
       <Teaser />
 
       <Section small>
-        <h1 className="text-lg font-bold">Latest Legal Wrapper</h1>
-        <span className="w-2/4 text-center text-base">
+        <h1 className="font-bold text-md md:text-lg">Latest Legal Wrapper</h1>
+        <span className="w-2/4 text-center text-sm md:text-base">
           Zero code, maximum speed. Make professional sites easy, fast and fun
           while delivering best-in-className SEO, performance.
         </span>
       </Section>
 
       <Section small>
-        <div className="relative p-16 lg:p-24">
+        <div className="relative md:p-8 lg:p-16">
           <Image src={'/dashboard.svg'} alt="" height={800} width={1600} />
         </div>
       </Section>
@@ -47,7 +47,7 @@ export default function Home() {
         <span className="text-center text-base">Features</span>
         <h2 className="text-md font-bold">Cutting-edge features for DAOs</h2>
 
-        <div className="relative p-16 lg:p-24">
+        <div className="relative sm:p-4 md:p-8 lg:p-16">
           <Features />
         </div>
       </Section>

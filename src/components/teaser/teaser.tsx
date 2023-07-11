@@ -27,13 +27,14 @@ const styles = {
     'shadow-zinc-800/50',
   ].join(' '),
   button: [
+    'flex',
     'items-center',
     'gap-1',
     'rounded-full',
     'bg-white/10',
     'px-3',
     'py-1',
-    'sm:flex',
+    'whitespace-nowrap'
   ].join(' '),
 };
 
