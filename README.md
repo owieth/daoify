@@ -2,6 +2,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Use Yarn V3:
+
+``` yarn set version stable ```
+
 First, run the development server:
 
 ```bash
