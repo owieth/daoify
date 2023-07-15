@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { type ReactNode } from 'react';
 import Logo from '../logo/logo';
+import Teaser from '../teaser/teaser';
 
 const navigation = [
   { name: 'About', href: '/' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Sign Up', href: '/join' },
+  // { name: 'Sign Up', href: '/join' },
 ];
 
 const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
@@ -60,6 +61,16 @@ const DesktopNavigation = () => {
       'px-3',
       'backdrop-blur',
     ].join(' '),
+    button: [
+      'flex',
+      'items-center',
+      'gap-1',
+      'rounded-full',
+      'bg-white/10',
+      'px-3',
+      'py-1',
+      'whitespace-nowrap'
+    ].join(' '),
   };
 
   return (
@@ -70,6 +81,12 @@ const DesktopNavigation = () => {
             {item.name}
           </NavItem>
         ))}
+
+        <div className='py-1'>
+          <Link className={styles.button} href="">
+            Sign up
+          </Link>
+        </div>
       </ul>
     </nav>
   );
