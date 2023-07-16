@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -11,6 +13,10 @@ module.exports = {
       base: '1em',
       md: '1.5em',
       lg: '3em',
+    },
+    screens: {
+      'xs': '380px',
+      ...defaultTheme.screens,
     },
     extend: {
       backgroundImage: {

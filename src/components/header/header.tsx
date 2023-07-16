@@ -50,7 +50,7 @@ const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
 
 const DesktopNavigation = () => {
   const styles = {
-    nav: ['hidden', 'pointer-events-auto', 'md:block'].join(' '),
+    nav: ['hidden', 'pointer-events-auto', 'xs:block'].join(' '),
     bar: [
       'flex',
       'rounded-full',
@@ -107,13 +107,13 @@ const Header = () => {
       'p-3',
       'backdrop-blur-sm',
     ].join(' '),
-    wrapper: ['col-span-3', 'hidden', 'justify-center ', 'sm:flex'].join(' '),
+    wrapper: ['col-span-3', 'hidden', 'justify-center ', 'xs:flex'].join(' '),
   };
 
   return (
     <>
       <header className={styles.header}>
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-2 items-center px-4 sm:grid-cols-5 sm:px-6 lg:px-8">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-2 items-center px-4 xs:grid-cols-5 xs:px-6 lg:px-8">
           <Link href="/" className={styles.link}>
             <Logo height={24} width={24} />
           </Link>
