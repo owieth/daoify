@@ -52,7 +52,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section>
+      <Section className='hidden md:block'>
         <h2 className="pb-4 text-md font-bold">Always at your command</h2>
         <span className="text-center text-base"></span>
 
