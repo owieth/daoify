@@ -61,8 +61,8 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section>
-        <div className="relative">
+      <Section noPadding>
+        <div className="relative flex justify-center w-full overflow-hidden">
           <div className="absolute bottom-0 top-0 z-10 flex items-center justify-center">
             <Feedbacks />
           </div>

@@ -2,22 +2,21 @@ import { ReactNode } from 'react';
 
 type Props = {
   small?: boolean
+  noPadding?: boolean;
   children: ReactNode;
 };
 
-const Section = ({ small: margin, children }: Props) => {
+const Section = ({ small, noPadding, children }: Props) => {
   const styles = {
     section: [
-      margin ? 'mt-[128px]' : 'mt-[400px]',
+      small ? 'mt-[128px]' : 'mt-[400px]',
+      noPadding && 'w-screen',
       'flex',
       'flex-col',
       'items-center',
       'w-full'
     ].join(' ')
   };
-
-  console.log(styles);
-
 
   return (
     <section className={styles.section}>
