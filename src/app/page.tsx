@@ -74,7 +74,7 @@ export default function Home() {
         <Analytics />
       </Section>
 
-      <Section>
+      <Section noPadding>
         <div className="relative w-full min-h-[60rem]">
           <div className="absolute left-0 right-0 top-0 flex w-full justify-center overflow-hidden">
             <div className="aspect-square max-h-[60rem] min-w-[60rem] overflow-hidden rounded-full bg-gradient-to-b p-px from-white from-0% via-white/30 via-[2%] to-white/0 to-25%">
@@ -86,8 +86,8 @@ export default function Home() {
 
           <div className='relative flex flex-col items-center text-center gap-12 z-10 mt-48'>
             <div>
-              <h1 className="text-lg font-bold">Built for the future.</h1>
-              <h1 className="text-lg font-bold">Available today.</h1>
+              <h1 className="font-bold text-md md:text-lg">Built for the future.</h1>
+              <h1 className="font-bold text-md md:text-lg">Available today.</h1>
             </div>
 
             <div className="relative flex flex-col max-h-[150px] max-w-[150px] items-center rounded-xl border border-line p-4 lg:p-6">
