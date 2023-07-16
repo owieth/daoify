@@ -23,7 +23,7 @@ const styles = {
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className="absolute top-0 -z-10">
+      <div className="absolute top-0 -z-10 w-full h-full">
         <GridVector />
       </div>
 
