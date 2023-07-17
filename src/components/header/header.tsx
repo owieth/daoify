@@ -83,7 +83,7 @@ const DesktopNavigation = () => {
         ))}
 
         <div className='py-1'>
-          <Link className={styles.button} href="">
+          <Link className={styles.button} href="https://forms.gle/W8ihgALH6SeouDKF6" target='_blank'>
             Sign up
           </Link>
         </div>
