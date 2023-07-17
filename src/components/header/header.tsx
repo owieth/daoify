@@ -69,7 +69,7 @@ const DesktopNavigation = () => {
       'bg-white/10',
       'px-3',
       'py-1',
-      'whitespace-nowrap'
+      'whitespace-nowrap',
     ].join(' '),
   };
 
@@ -82,8 +82,12 @@ const DesktopNavigation = () => {
           </NavItem>
         ))}
 
-        <div className='py-1'>
-          <Link className={styles.button} href="https://forms.gle/W8ihgALH6SeouDKF6" target='_blank'>
+        <div className="py-1">
+          <Link
+            className={styles.button}
+            href="https://forms.gle/W8ihgALH6SeouDKF6"
+            target="_blank"
+          >
             Sign up
           </Link>
         </div>

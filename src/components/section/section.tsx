@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 type Props = {
-  small?: boolean
+  small?: boolean;
   noPadding?: boolean;
   className?: string;
   children: ReactNode;
@@ -15,7 +15,7 @@ const Section = ({ small, noPadding, className, children }: Props) => {
       'flex',
       'flex-col',
       'items-center',
-    ].join(' ')
+    ].join(' '),
   };
 
   return (

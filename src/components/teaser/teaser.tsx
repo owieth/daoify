@@ -34,7 +34,7 @@ const styles = {
     'bg-white/10',
     'px-3',
     'py-1',
-    'whitespace-nowrap'
+    'whitespace-nowrap',
   ].join(' '),
 };
 
