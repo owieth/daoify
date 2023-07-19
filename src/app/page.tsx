@@ -92,8 +92,8 @@ export default function Home() {
               <h1 className="text-md font-bold md:text-lg">Available today.</h1>
             </div>
 
-            <div className="relative flex max-h-[150px] max-w-[150px] flex-col items-center rounded-xl border border-line p-4 lg:p-6">
-              <Logo height={128} width={128} />
+            <div className="relative h-[300px] w-[300px]">
+              <Image src={'appIcon.svg'} alt='' fill />
             </div>
           </div>
         </div>
