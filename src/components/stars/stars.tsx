@@ -17,10 +17,10 @@ const Stars = () => {
         fpsLimit: 120,
         particles: {
           number: {
-            value: 355,
+            value: 10,
             density: {
               enable: true,
-              value_area: 789.1476416322727,
+              value_area: 50
             },
           },
           color: {

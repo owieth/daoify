@@ -28,7 +28,7 @@ export default function Home() {
       </Section>
 
       <Section small>
-        <div className="relative md:p-8 lg:p-16">
+        <div className="relative md:px-8 lg:px-16">
           <Image src={'/dashboard.svg'} alt="" height={800} width={1600} />
         </div>
       </Section>

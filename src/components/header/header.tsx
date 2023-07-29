@@ -99,7 +99,7 @@ const Header = () => {
       'border-b',
       'border-white/10',
       'items-center',
-      'backdrop-blur',
+      'backdrop-blur-sm',
       'xs:grid-cols-5',
       'xs:px-6',
       'lg:px-8',
