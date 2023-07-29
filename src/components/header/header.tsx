@@ -4,12 +4,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { type ReactNode } from 'react';
 import Logo from '../logo/logo';
-import Teaser from '../teaser/teaser';
 
 const navigation = [
   { name: 'About', href: '/' },
   { name: 'Blog', href: '/blog' },
-  // { name: 'Sign Up', href: '/join' },
 ];
 
 const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
@@ -59,7 +57,6 @@ const DesktopNavigation = () => {
       'border-white/10',
       'text-sm',
       'px-3',
-      'backdrop-blur',
     ].join(' '),
     button: [
       'flex',
@@ -81,16 +78,6 @@ const DesktopNavigation = () => {
             {item.name}
           </NavItem>
         ))}
-
-        <div className="py-1">
-          <Link
-            className={styles.button}
-            href="https://forms.gle/W8ihgALH6SeouDKF6"
-            target="_blank"
-          >
-            Sign up
-          </Link>
-        </div>
       </ul>
     </nav>
   );
@@ -98,7 +85,25 @@ const DesktopNavigation = () => {
 
 const Header = () => {
   const styles = {
-    header: ['fixed', 'left-0', 'right-0', 'top-8', 'z-50'].join(' '),
+    header: [
+      'fixed',
+      'left-0',
+      'right-0',
+      'py-4',
+      'px-4',
+      'z-50',
+      'm-0',
+      'grid',
+      'w-full',
+      'grid-cols-2',
+      'border-b',
+      'border-white/10',
+      'items-center',
+      'backdrop-blur',
+      'xs:grid-cols-5',
+      'xs:px-6',
+      'lg:px-8',
+    ].join(' '),
     link: [
       'inline-flex',
       'justify-center',
@@ -109,7 +114,6 @@ const Header = () => {
       'border-white/10',
       'bg-black/80',
       'p-3',
-      'backdrop-blur-sm',
     ].join(' '),
     wrapper: ['col-span-3', 'hidden', 'justify-center ', 'xs:flex'].join(' '),
   };
@@ -117,13 +121,11 @@ const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-2 items-center px-4 xs:grid-cols-5 xs:px-6 lg:px-8">
-          <Link href="/" className={styles.link}>
-            <Logo height={24} width={24} />
-          </Link>
-          <div className={styles.wrapper}>
-            <DesktopNavigation />
-          </div>
+        <Link href="/" className={styles.link}>
+          <Logo height={24} width={24} />
+        </Link>
+        <div className={styles.wrapper}>
+          <DesktopNavigation />
         </div>
       </header>
     </>

@@ -93,7 +93,7 @@ export default function Home() {
             </div>
 
             <div className="relative h-[300px] w-[300px]">
-              <Image src={'appIcon.svg'} alt='' fill />
+              <Image src={'appIcon.svg'} alt="" fill />
             </div>
           </div>
         </div>
