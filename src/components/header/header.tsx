@@ -10,6 +10,47 @@ const navigation = [
   { name: 'Blog', href: '/blog' },
 ];
 
+const SignUp = () => {
+  const styles = {
+    wrapper: ['flex', 'justify-end'].join(' '),
+    button: [
+      'flex',
+      'items-center',
+      'gap-2',
+      'rounded-lg',
+      'bg-black/80',
+      'border',
+      'border-white/10',
+      'text-sm',
+      'px-3',
+      'py-2',
+      'text-white/80 hover:text-white/100',
+    ].join(' '),
+    label: ['hidden', 'md:block'].join(' '),
+  };
+
+  return (
+    <div className={styles.wrapper}>
+      <Link href={''} className={styles.button}>
+        <span className={styles.label}>Get DAOify</span>
+        <svg
+          width="17"
+          height="16"
+          viewBox="0 0 17 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            d="M5.62451 0C2.86309 0 0.624512 2.23858 0.624512 5V11C0.624512 13.7614 2.86309 16 5.62451 16H11.6245C14.3859 16 16.6245 13.7614 16.6245 11V5C16.6245 2.23858 14.3859 0 11.6245 0H5.62451ZM5.34251 12.3171H8.43626C9.32262 12.3171 10.084 12.1424 10.7203 11.793C11.3596 11.4435 11.8496 10.9421 12.1905 10.2887C12.5343 9.63529 12.7061 8.85404 12.7061 7.94495C12.7061 7.0387 12.5343 6.26029 12.1905 5.60972C11.8496 4.95915 11.3624 4.46058 10.7289 4.11398C10.0953 3.76455 9.33967 3.58984 8.46183 3.58984H5.34251V12.3171ZM8.35955 10.7361H7.18768V5.1708H8.36381C8.90927 5.1708 9.36808 5.26739 9.74023 5.46058C10.1124 5.65376 10.3922 5.95489 10.5797 6.36398C10.7701 6.77308 10.8652 7.30006 10.8652 7.94495C10.8652 8.59552 10.7701 9.12677 10.5797 9.5387C10.3922 9.94779 10.111 10.2503 9.73597 10.4464C9.36381 10.6396 8.90501 10.7361 8.35955 10.7361Z"
+            fill="currentColor"
+          />
+        </svg>
+      </Link>
+    </div>
+  );
+};
+
 const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
   const isActive = usePathname() === href;
 
@@ -127,6 +168,8 @@ const Header = () => {
         <div className={styles.wrapper}>
           <DesktopNavigation />
         </div>
+
+        <SignUp />
       </header>
     </>
   );

@@ -20,7 +20,7 @@ const Stars = () => {
             value: 10,
             density: {
               enable: true,
-              value_area: 50
+              value_area: 50,
             },
           },
           color: {
