@@ -36,10 +36,22 @@ module.exports = {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(0%)' },
         },
+        flip: {
+          to: {
+            transform: 'rotate(360deg)',
+          },
+        },
+        rotate: {
+          to: {
+            transform: 'rotate(90deg)',
+          },
+        },
       },
       animation: {
         marquee: 'marquee 60s linear infinite',
         marquee2: 'marquee2 25s linear infinite',
+        flip: 'flip 6s infinite steps(2, end)',
+        rotate: 'rotate 3s linear infinite both',
       },
     },
   },
