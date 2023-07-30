@@ -19,7 +19,7 @@ const Feedback = () => (
 const Feedbacks = () => {
   return (
     <div className="flex max-w-[100vw]">
-      <div className="hover:pause flex animate-marquee gap-8">
+      <div className="flex gap-8">
         <Feedback />
         <Feedback />
         <Feedback />

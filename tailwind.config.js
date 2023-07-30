@@ -28,14 +28,6 @@ module.exports = {
         line: '#19191A',
       },
       keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
-        marquee2: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(0%)' },
-        },
         flip: {
           to: {
             transform: 'rotate(360deg)',
@@ -54,13 +46,18 @@ module.exports = {
             backgroundPosition: '-200% 0',
           },
         },
+        infiniteSlider: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': {
+            transform: 'translateX(calc(-250px * 5))',
+          },
+        },
       },
       animation: {
-        marquee: 'marquee 60s linear infinite',
-        marquee2: 'marquee2 25s linear infinite',
         flip: 'flip 6s infinite steps(2, end)',
         rotate: 'rotate 3s linear infinite both',
         backgroundShine: 'backgroundShine 2s linear infinite',
+        ['infinite-slider']: 'infiniteSlider 20s linear infinite',
       },
     },
   },
