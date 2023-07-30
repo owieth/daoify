@@ -46,12 +46,21 @@ module.exports = {
             transform: 'rotate(90deg)',
           },
         },
+        backgroundShine: {
+          from: {
+            backgroundPosition: '0 0',
+          },
+          to: {
+            backgroundPosition: '-200% 0',
+          },
+        },
       },
       animation: {
         marquee: 'marquee 60s linear infinite',
         marquee2: 'marquee2 25s linear infinite',
         flip: 'flip 6s infinite steps(2, end)',
         rotate: 'rotate 3s linear infinite both',
+        backgroundShine: 'backgroundShine 2s linear infinite',
       },
     },
   },
