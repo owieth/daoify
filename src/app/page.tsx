@@ -9,7 +9,7 @@ import Teaser from '@/components/teaser/teaser';
 import Image from 'next/image';
 
 const styles = {
-  main: ['flex', 'flex-col', 'items-center', 'min-h-screen', 'pt-48'].join(' '),
+  main: ['flex', 'flex-col', 'items-center', 'min-h-screen'].join(' '),
 };
 
 export default function Home() {
@@ -17,7 +17,9 @@ export default function Home() {
     <main className={styles.main}>
       <Stars />
 
-      <Teaser />
+      <div className="pt-48">
+        <Teaser />
+      </div>
 
       <Section small>
         <h1 className="text-md font-bold md:text-lg">Latest Legal Wrapper</h1>
@@ -55,7 +57,7 @@ export default function Home() {
         <Section noPadding>
           <div className="relative flex w-full justify-center overflow-hidden">
             <div className="absolute bottom-0 top-0 z-10 flex items-center justify-center">
-              <div className="relative m-auto w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-[100px] before:bg-[linear-gradient(to_right,black_0%,rgba(255,255,255,0)_100%)] before:content-[''] after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[100px] after:-scale-x-100 after:bg-[linear-gradient(to_right,black_0%,rgba(255,255,255,0)_100%)] after:content-['']">
+              <div className="relative m-auto w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-[200px] before:bg-[linear-gradient(to_right,black_0%,rgba(255,255,255,0)_100%)] before:content-[''] after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[200px] after:bg-[linear-gradient(to_left,black_0%,rgba(255,255,255,0)_100%)] after:content-['']">
                 <div className="flex w-full animate-infinite-slider">
                   <Feedbacks />
                 </div>

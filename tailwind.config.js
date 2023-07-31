@@ -57,7 +57,7 @@ module.exports = {
         flip: 'flip 6s infinite steps(2, end)',
         rotate: 'rotate 3s linear infinite both',
         backgroundShine: 'backgroundShine 2s linear infinite',
-        ['infinite-slider']: 'infiniteSlider 20s linear infinite',
+        ['infinite-slider']: 'infiniteSlider 40s linear infinite',
       },
     },
   },

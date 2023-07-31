@@ -6,6 +6,28 @@ import { loadFull } from 'tsparticles';
 import type { Engine } from 'tsparticles-engine';
 
 const Stars = () => {
+  const styles = {
+    particles: [
+      'absolute',
+      'w-screen',
+      'h-screen',
+      'z-[-1]',
+      'before:absolute',
+      'before:h-full',
+      'before:w-[200px]',
+      'before:bg-[linear-gradient(to_right,black_0%,rgba(255,255,255,0)_100%)]',
+      "before:content-['']",
+      'after:absolute',
+      'after:right-0',
+      'after:top-0',
+      'after:z-[2]',
+      'after:h-full',
+      'after:w-[200px]',
+      'after:bg-[linear-gradient(to_left,black_0%,rgba(255,255,255,0)_100%)]',
+      "after:content-['']",
+    ].join(' '),
+  };
+
   const particlesInit = useCallback(
     async (engine: Engine) => await loadFull(engine),
     []
@@ -15,6 +37,9 @@ const Stars = () => {
     <Particles
       options={{
         fpsLimit: 120,
+        fullScreen: {
+          enable: false,
+        },
         particles: {
           number: {
             value: 10,
@@ -86,6 +111,7 @@ const Stars = () => {
         detectRetina: true,
       }}
       init={particlesInit}
+      className={styles.particles}
     />
   );
 };
