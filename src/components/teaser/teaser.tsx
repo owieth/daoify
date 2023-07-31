@@ -25,7 +25,7 @@ const styles = {
     'hover:transition-all',
     'hover:shadow-md',
     'hover:shadow-zinc-800/50',
-    'hover:animate-backgroundShine',
+    'hover:animate-background-shine',
     'hover:bg-[linear-gradient(110deg,#000,45%,#4D4B4B,55%,#000)] bg-[length:250%_100%]',
   ].join(' '),
   button: [

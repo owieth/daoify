@@ -2,6 +2,7 @@ import Analytics from '@/components/analytics/analytics';
 import Cobe from '@/components/cobe/cobe';
 import Features from '@/components/features/features';
 import Feedbacks from '@/components/feedbacks/feedbacks';
+import ShowCase from '@/components/showcase/showcase';
 import Keyboard from '@/components/keyboard/keyboard';
 import Section from '@/components/section/section';
 import Stars from '@/components/stars/stars';
@@ -31,7 +32,7 @@ export default function Home() {
 
       <Section small>
         <div className="relative md:px-8 lg:px-16">
-          <Image src={'/dashboard.svg'} alt="" height={800} width={1600} />
+          <ShowCase />
         </div>
       </Section>
 
