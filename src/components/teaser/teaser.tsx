@@ -21,7 +21,6 @@ const styles = {
     'text-sm',
     'p-1',
     'backdrop-blur-md',
-    'hover:bg-white/10',
     'delay-200',
     'hover:transition-all',
     'hover:shadow-md',
