@@ -67,12 +67,12 @@ const Stars = () => {
             },
           },
           opacity: {
-            value: 0.48927153781200905,
-            random: false,
-            anim: {
+            value: { min: 0, max: 0.5 },
+            animation: {
+              count: 1,
               enable: true,
-              speed: 0.2,
-              opacity_min: 0,
+              speed: 0.5,
+              startValue: 'min',
               sync: false,
             },
           },
