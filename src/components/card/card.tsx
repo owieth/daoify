@@ -44,10 +44,10 @@ export const Card = ({ shiny, children }: Props) => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="bg-gradient relative overflow-hidden rounded-3xl bg-gradient-to-tr from-neutral-50 to-neutral-100 p-px dark:from-neutral-950 dark:to-neutral-900"
+      className="bg-gradient relative overflow-hidden rounded-2xl bg-gradient-to-tr from-neutral-50 to-neutral-100 p-px dark:from-neutral-950 dark:to-neutral-900"
     >
       <div className="user-select-none center pointer-events-none absolute left-1/2 top-0 h-px w-[300px] max-w-[300px] -translate-x-1/2 bg-gradient-to-r from-white/0 from-0% via-white/30 via-50% to-white/0 to-100%"></div>
-      <div className="user-select-none center pointer-events-none absolute -top-1 left-1/2 h-[200px] w-full max-w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-3xl md:max-w-[400px]"></div>
+      <div className="user-select-none center pointer-events-none absolute -top-1 left-1/2 h-[200px] w-full max-w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-2xl md:max-w-[400px]"></div>
 
       {shiny && (
         <div
@@ -59,7 +59,7 @@ export const Card = ({ shiny, children }: Props) => {
         />
       )}
 
-      <div className="grid gap-16 rounded-[23px] bg-gradient-to-tr from-white to-neutral-50 p-8 dark:from-black dark:to-neutral-950">
+      <div className="grid gap-16 rounded-2xl bg-gradient-to-tr from-white to-neutral-50 p-8 dark:from-black dark:to-neutral-950">
         {children}
       </div>
     </div>
