@@ -64,6 +64,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            <div className="absolute bottom-0 z-[2] h-full w-full bg-gradient-to-t from-black via-black via-35% to-transparent" />
             <Cobe />
           </div>
         </Section>
