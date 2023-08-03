@@ -10,11 +10,11 @@ import Logo from '../logo/logo';
 
 const navigation = [
   { name: 'About', href: '/about' },
-  { name: 'Blog', href: '/blog', breakpoint: 'xs' },
-  { name: 'Process', href: '/process', breakpoint: 'md' },
-  { name: 'Pricing', href: '/pricing', breakpoint: 'md' },
-  { name: 'Changelog', href: '/changelog', breakpoint: 'md' },
-  { name: 'Docs', href: '/docs', breakpoint: 'xs' },
+  { name: 'Blog', href: '/blog', className: 'hidden xs:block' },
+  { name: 'Process', href: '/process', className: 'hidden md:block' },
+  { name: 'Pricing', href: '/pricing', className: 'hidden md:block' },
+  { name: 'Changelog', href: '/changelog', className: 'hidden md:block' },
+  { name: 'Docs', href: '/docs', className: 'hidden xs:block' },
 ];
 
 const SignUp = () => {
@@ -147,13 +147,7 @@ const Navigation = () => {
     <nav className={styles.nav}>
       <ul className={styles.bar}>
         {navigation.map((item, i) => (
-          <NavItem
-            key={i}
-            href={item.href}
-            className={`${
-              item.breakpoint ? `hidden ${item.breakpoint}:block` : ''
-            }`}
-          >
+          <NavItem key={i} href={item.href} className={item.className}>
             {item.name}
           </NavItem>
         ))}
