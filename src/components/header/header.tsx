@@ -6,8 +6,12 @@ import { type ReactNode } from 'react';
 import Logo from '../logo/logo';
 
 const navigation = [
-  { name: 'About', href: '/' },
+  { name: 'About', href: '/about' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Process', href: '/process' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'Changelog', href: '/changelog' },
+  { name: 'Docs', href: '/docs' },
 ];
 
 const SignUp = () => {
