@@ -1,4 +1,5 @@
 import GridVector from '../grid-vector/grid-vector';
+import H2 from '../text/h2';
 
 const Analytic = ({ label, value }: { label: string; value: number }) => {
   const styles = {
@@ -33,7 +34,7 @@ const Analytics = () => {
       </div> */}
 
       <span className="text-center text-base">Analytics</span>
-      <h2 className="text-md font-bold">Some numbers about us</h2>
+      <H2>Some numbers about us</H2>
 
       <div className="relative flex w-full items-center justify-between pt-16">
         <Analytic label="Successful projects" value={750} />

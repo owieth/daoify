@@ -8,6 +8,7 @@ import Section from '@/components/section/section';
 import Stars from '@/components/stars/stars';
 import Teaser from '@/components/teaser/teaser';
 import Image from 'next/image';
+import H2 from '@/components/text/h2';
 
 const styles = {
   main: ['flex', 'flex-col', 'items-center', 'min-h-screen'].join(' '),
@@ -39,13 +40,13 @@ export default function Home() {
       <div className="z-[1] bg-black">
         <Section small>
           <span className="text-center text-base">Features</span>
-          <h2 className="pb-4 text-md font-bold">Cutting-edge features for DAOs</h2>
+          <H2>Cutting-edge features for DAOs</H2>
 
           <Features />
         </Section>
 
         <Section className="hidden md:flex">
-          <h2 className="pb-4 text-md font-bold">Always at your command</h2>
+          <H2>Always at your command</H2>
           <span className="text-center text-base"></span>
 
           <div className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-xl border border-line p-4 lg:p-6">
