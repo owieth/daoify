@@ -36,7 +36,7 @@ const FooterItem = ({
   };
 
   return (
-    <Link href={link} className={styles.link}>
+    <Link href={link} className={styles.link} target={isExternal ? '_blank' : '_self'}>
       {children}
       {isExternal && <IconLink />}
     </Link>
