@@ -1,17 +1,20 @@
 'use client';
 
+import { Popover, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { type ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
+import ChevronDownIcon from '../icons/chevron-down';
+import CloseIcon from '../icons/close';
 import Logo from '../logo/logo';
 
 const navigation = [
   { name: 'About', href: '/about' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Process', href: '/process' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Changelog', href: '/changelog' },
-  { name: 'Docs', href: '/docs' },
+  { name: 'Blog', href: '/blog', breakpoint: 'xs' },
+  { name: 'Process', href: '/process', breakpoint: 'md' },
+  { name: 'Pricing', href: '/pricing', breakpoint: 'md' },
+  { name: 'Changelog', href: '/changelog', breakpoint: 'md' },
+  { name: 'Docs', href: '/docs', breakpoint: 'xs' },
 ];
 
 const SignUp = () => {
@@ -61,7 +64,15 @@ const SignUp = () => {
   );
 };
 
-const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
+const NavItem = ({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className?: string;
+  children: ReactNode;
+}) => {
   const isActive = usePathname() === href;
 
   const styles = {
@@ -97,7 +108,7 @@ const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
   };
 
   return (
-    <li>
+    <li className={className}>
       <Link href={href} className={styles.link({ isActive })}>
         {children}
         {isActive && <span className={styles.activeLink} />}
@@ -106,9 +117,11 @@ const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
   );
 };
 
-const DesktopNavigation = () => {
+const Navigation = () => {
   const styles = {
-    nav: ['hidden', 'pointer-events-auto', 'xs:block'].join(' '),
+    nav: ['col-span-3', 'justify-center', 'flex', 'pointer-events-auto'].join(
+      ' '
+    ),
     bar: [
       'flex',
       'rounded-full',
@@ -134,10 +147,74 @@ const DesktopNavigation = () => {
     <nav className={styles.nav}>
       <ul className={styles.bar}>
         {navigation.map((item, i) => (
-          <NavItem key={i} href={item.href}>
+          <NavItem
+            key={i}
+            href={item.href}
+            className={`${
+              item.breakpoint ? `hidden ${item.breakpoint}:block` : ''
+            }`}
+          >
             {item.name}
           </NavItem>
         ))}
+
+        <Popover className="xs:hidden">
+          <Popover.Button className="h-full w-2 outline-none">
+            <ChevronDownIcon className="stroke-white/50" />
+          </Popover.Button>
+          <Transition.Root>
+            <Transition.Child
+              as={Fragment}
+              enter="duration-150 ease-out"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="duration-150 ease-in"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Popover.Overlay className="fixed inset-0 z-50 h-screen backdrop-blur-md" />
+            </Transition.Child>
+            <Transition.Child
+              as={Fragment}
+              enter="duration-150 ease-out"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="duration-150 ease-in"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Popover.Panel
+                focus
+                className="fixed inset-x-4 top-8 z-50 origin-top rounded-2xl border border-white bg-black p-8 ring-1 ring-zinc-900/5"
+              >
+                <div className="flex items-center justify-between">
+                  <h2 className="text-sm font-medium  ">Navigation</h2>
+                  <Popover.Button
+                    aria-label="Close menu"
+                    className="-m-1 p-1 outline-none"
+                  >
+                    <CloseIcon className="h-6 w-6" />
+                  </Popover.Button>
+                </div>
+                <nav className="mt-6">
+                  <ul className="divide -my-2 divide-y text-base">
+                    {navigation.map((item, i) => (
+                      <li key={i}>
+                        <Popover.Button
+                          as={Link}
+                          href={item.href}
+                          className="z-10 block py-2"
+                        >
+                          {item.name}
+                        </Popover.Button>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </Popover.Panel>
+            </Transition.Child>
+          </Transition.Root>
+        </Popover>
       </ul>
     </nav>
   );
@@ -160,8 +237,8 @@ const Header = () => {
       'border-white/10',
       'items-center',
       'backdrop-blur-sm',
-      'xs:grid-cols-5',
-      'xs:px-6',
+      'grid-cols-5',
+      'px-6',
       'lg:px-8',
     ].join(' '),
     link: [
@@ -175,7 +252,6 @@ const Header = () => {
       'bg-black/80',
       'p-3',
     ].join(' '),
-    wrapper: ['col-span-3', 'hidden', 'justify-center ', 'xs:flex'].join(' '),
   };
 
   return (
@@ -184,10 +260,7 @@ const Header = () => {
         <Link href="/" className={styles.link}>
           <Logo height={24} width={24} />
         </Link>
-        <div className={styles.wrapper}>
-          <DesktopNavigation />
-        </div>
-
+        <Navigation />
         <SignUp />
       </header>
     </>
