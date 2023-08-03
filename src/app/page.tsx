@@ -37,13 +37,11 @@ export default function Home() {
       </Section>
 
       <div className="z-[1] bg-black">
-        <Section>
+        <Section small>
           <span className="text-center text-base">Features</span>
-          <h2 className="text-md font-bold">Cutting-edge features for DAOs</h2>
+          <h2 className="pb-4 text-md font-bold">Cutting-edge features for DAOs</h2>
 
-          <div className="relative sm:p-4 md:p-8 lg:p-16">
-            <Features />
-          </div>
+          <Features />
         </Section>
 
         <Section className="hidden md:flex">
