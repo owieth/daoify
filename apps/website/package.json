@@ -1,0 +1,27 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^13.4.1",
+    "@headlessui/react": "^1.7.14",
+    "@react-spring/web": "^9.7.3",
+    "cobe": "^0.6.3",
+    "react-intersection-observer": "^9.5.2",
+    "react-particles": "^2.11.0",
+    "tsparticles": "^2.11.1",
+    "tsparticles-engine": "^2.11.1",
+    "ui": "*"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "*",
+    "tailwind-config": "*",
+    "tsconfig": "*"
+  }
+}

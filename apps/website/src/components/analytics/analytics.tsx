@@ -28,7 +28,7 @@ const Analytic = ({ label, value }: { label: string; value: number }) => {
 
 const Analytics = () => {
   return (
-    <div className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-xl border border-line p-16 lg:p-24">
+    <div className="border-line relative flex h-full w-full flex-col items-center overflow-hidden rounded-xl border p-16 lg:p-24">
       {/* <div className="absolute top-0">
         <GridVector />
       </div> */}

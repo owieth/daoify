@@ -1,37 +1,22 @@
 {
-  "name": "daoify-website",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "prettier": "prettier --write --ignore-path .gitignore ."
-  },
-  "dependencies": {
-    "@headlessui/react": "^1.7.14",
-    "@react-spring/web": "^9.7.3",
-    "cobe": "^0.6.3",
-    "next": "13.4.7",
-    "prettier": "^2.8.6",
-    "prettier-plugin-tailwindcss": "^0.2.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-intersection-observer": "^9.5.2",
-    "react-particles": "^2.11.0",
-    "tsparticles": "^2.11.1",
-    "tsparticles-engine": "^2.11.1"
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "clean": "turbo clean",
+    "prettier": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@types/node": "20.3.2",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.43.0",
-    "eslint-config-next": "13.4.7",
-    "postcss": "8.4.24",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.1.5"
-  }
+    "eslint-config-custom": "*",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.11",
+    "turbo": "latest"
+  },
+  "name": "turborepo-example",
+  "packageManager": "yarn@1.22.15",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

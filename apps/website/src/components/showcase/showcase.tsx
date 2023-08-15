@@ -54,9 +54,9 @@ const ShowCase = () => {
     <div ref={ref} className="mb-[12.8rem] [perspective:2000px]">
       <div
         className={`
-          relative rounded-lg border border-white/10 bg-white bg-opacity-[0.01] bg-hero-gradient
+          bg-hero-gradient relative rounded-lg border border-white/10 bg-white bg-opacity-[0.01]
           ${inView ? 'animate-image-rotate' : '[transform:rotateX(25deg)]'}
-          before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-hero-glow before:opacity-0 before:[filter:blur(70px)]
+          before:bg-hero-glow before:absolute before:left-0 before:top-0 before:h-full before:w-full before:opacity-0 before:[filter:blur(70px)]
           ${inView && 'before:animate-image-glow'}
           `}
       >
@@ -73,14 +73,14 @@ const ShowCase = () => {
                 } as CSSProperties
               }
               className={`
-                absolute top-0 block h-[1px] w-[10rem] bg-glow-lines
+                bg-glow-lines absolute top-0 block h-[1px] w-[10rem]
                 ${
                   line.direction === 'to left' &&
-                  'left-0 h-[1px] w-[calc(var(--size)*0.5rem)] animate-glow-line-horizontal md:w-[calc(var(--size)*1rem)]'
+                  'animate-glow-line-horizontal left-0 h-[1px] w-[calc(var(--size)*0.5rem)] md:w-[calc(var(--size)*1rem)]'
                 }
                 ${
                   line.direction === 'to top' &&
-                  'right-0 h-[calc(var(--size)*0.5rem)] w-[1px] animate-glow-line-vertical md:h-[calc(var(--size)*1rem)]'
+                  'animate-glow-line-vertical right-0 h-[calc(var(--size)*0.5rem)] w-[1px] md:h-[calc(var(--size)*1rem)]'
                 }
                 `}
             />

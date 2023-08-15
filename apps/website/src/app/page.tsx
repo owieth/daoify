@@ -49,7 +49,7 @@ export default function Home() {
           <H2>Always at your command</H2>
           <span className="text-center text-base"></span>
 
-          <div className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-xl border border-line p-4 lg:p-6">
+          <div className="border-line relative flex h-full w-full flex-col items-center overflow-hidden rounded-xl border p-4 lg:p-6">
             <Keyboard />
           </div>
         </Section>
@@ -58,7 +58,7 @@ export default function Home() {
           <div className="relative flex w-full justify-center overflow-hidden">
             <div className="absolute bottom-0 top-0 z-10 flex items-center justify-center">
               <div className="relative m-auto w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-[200px] before:bg-[linear-gradient(to_right,black_0%,rgba(255,255,255,0)_100%)] before:content-[''] after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[200px] after:bg-[linear-gradient(to_left,black_0%,rgba(255,255,255,0)_100%)] after:content-['']">
-                <div className="flex w-full animate-infinite-slider">
+                <div className="animate-infinite-slider flex w-full">
                   <Feedbacks />
                 </div>
               </div>
