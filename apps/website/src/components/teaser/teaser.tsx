@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import IconLink from '../icons/link';
+import IconAnnouncement from '../icons/announcement';
 
 const styles = {
   link: [
@@ -20,6 +21,7 @@ const styles = {
     'bg-black/80',
     'text-sm',
     'p-1',
+    'pl-3',
     'backdrop-blur-md',
     'delay-200',
     'hover:transition-all',
@@ -50,7 +52,8 @@ const Teaser = () => {
         href="https://swissdao.space/"
       >
         <span className={styles.teaser}>
-          <div className="pl-3 pr-2">Announcing our Launch Event</div>{' '}
+          <IconAnnouncement />
+          <div className="px-2">Announcing our Launch Event</div>{' '}
           <div className={styles.button}>
             Join the waitlist
             <IconLink />
