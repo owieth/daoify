@@ -120,7 +120,7 @@ const NavItem = ({
 const Navigation = () => {
   const styles = {
     nav: ['col-span-3', 'justify-center', 'flex', 'pointer-events-auto'].join(
-      ' '
+      ' ',
     ),
     bar: [
       'flex',

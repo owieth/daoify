@@ -30,7 +30,7 @@ const Stars = () => {
 
   const particlesInit = useCallback(
     async (engine: Engine) => await loadFull(engine),
-    []
+    [],
   );
 
   return (

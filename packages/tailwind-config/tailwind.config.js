@@ -27,8 +27,6 @@ module.exports = {
           'radial-gradient(ellipse 50% 80% at 20% 40%,rgba(255,255,255,0.1),transparent), radial-gradient(ellipse 50% 80% at 80% 50%,rgba(255,255,255,0.15),transparent)',
         'hero-glow':
           'conic-gradient(from 230.29deg at 51.63% 52.16%, rgb(255, 255, 255) 0deg, rgb(255, 255, 255) 67.5deg, rgb(255, 255, 255) 198.75deg, rgb(255, 255, 255) 251.25deg, rgb(255, 255, 255) 301.88deg, rgb(255, 255, 255) 360deg)',
-        'glow-lines':
-          'linear-gradient(var(--direction),#ffffff 0.43%,#ffffff 14.11%,rgba(120,119,198,0) 62.95%)',
       },
       colors: {
         line: '#19191A',
