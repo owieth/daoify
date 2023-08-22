@@ -1,14 +1,13 @@
-import Analytics from '@/components/analytics/analytics';
 import Cobe from '@/components/cobe/cobe';
 import Features from '@/components/features/features';
 import Feedbacks from '@/components/feedbacks/feedbacks';
-import ShowCase from '@/components/showcase/showcase';
 import Keyboard from '@/components/keyboard/keyboard';
 import Section from '@/components/section/section';
+import ShowCase from '@/components/showcase/showcase';
 import Stars from '@/components/stars/stars';
 import Teaser from '@/components/teaser/teaser';
-import Image from 'next/image';
 import H2 from '@/components/text/h2';
+import Image from 'next/image';
 
 const styles = {
   main: ['flex', 'flex-col', 'items-center', 'min-h-screen'].join(' '),
@@ -69,9 +68,9 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section>
+        {/* <Section>
           <Analytics />
-        </Section>
+        </Section> */}
 
         <Section noPadding>
           <div className="relative min-h-[60rem] w-full">
