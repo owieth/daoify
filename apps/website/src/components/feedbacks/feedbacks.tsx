@@ -1,7 +1,7 @@
 import { Card } from '../card/card';
 
 const Feedback = () => (
-  <Card shiny>
+  <Card>
     <div className="w-[450px] drop-shadow-lg">
       <blockquote>
         &quot;This platform helped me increase my sales and revenue.
