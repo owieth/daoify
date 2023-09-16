@@ -114,7 +114,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="progress" small>
+      <Section id="process" small>
         <Separator />
 
         <span className="mt-20 text-center text-base">Process</span>
