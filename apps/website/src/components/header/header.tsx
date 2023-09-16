@@ -3,10 +3,21 @@
 import { Popover, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Fragment, type ReactNode } from 'react';
+import { Fragment, useState, type ReactNode } from 'react';
 import ChevronDownIcon from '../icons/chevron-down';
 import CloseIcon from '../icons/close';
 import Logo from '../logo/logo';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '../ui/dialog';
+import { Label } from '../ui/label';
+import { Input } from '../ui/input';
+import { Button } from '../ui/button';
 
 const navigation = [
   { name: 'About', href: '#about' },
@@ -17,7 +28,7 @@ const navigation = [
   { name: 'Docs', href: '/docs', className: 'hidden xs:block' },
 ];
 
-const SignUp = () => {
+const SignUp = ({ onClick }: { onClick: () => void }) => {
   const styles = {
     wrapper: ['flex', 'justify-end'].join(' '),
     link: [
@@ -39,7 +50,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} onClick={onClick}>
       <Link href={''} className={styles.link}>
         <span className="spark mask-gradient animate-flip before:animate-rotate absolute inset-0 h-[100%] w-[100%] overflow-hidden rounded-lg [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
         <span className="backdrop absolute inset-[1px] rounded-lg bg-black transition-colors duration-200" />
@@ -215,6 +226,8 @@ const Navigation = () => {
 };
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
   const styles = {
     header: [
       'fixed',
@@ -255,8 +268,46 @@ const Header = () => {
           <Logo height={24} width={24} />
         </Link>
         <Navigation />
-        <SignUp />
+        <SignUp onClick={() => setOpen(!open)} />
       </header>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle className="text-md text-black">
+              Join Waitlist
+            </DialogTitle>
+            <DialogDescription>
+              We will let you know when it&apos;s time!
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="name" className="text-right text-black">
+                Name
+              </Label>
+              <Input
+                id="name"
+                value="Max Muster"
+                className="col-span-3 text-black"
+              />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="email" className="text-right text-black">
+                Email
+              </Label>
+              <Input
+                id="email"
+                value="max.muster@gmail.com"
+                className="col-span-3 text-black"
+              />
+            </div>
+          </div>
+          <DialogFooter>
+            <Button type="submit">Save changes</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
