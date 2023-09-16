@@ -10,7 +10,7 @@ import Logo from '../logo/logo';
 
 const navigation = [
   { name: 'About', href: '/about' },
-  { name: 'Blog', href: '/blog', className: 'hidden xs:block' },
+  // { name: 'Blog', href: '/blog', className: 'hidden xs:block' },
   { name: 'Process', href: '/process', className: 'hidden md:block' },
   { name: 'Pricing', href: '/pricing', className: 'hidden md:block' },
   { name: 'Changelog', href: '/changelog', className: 'hidden md:block' },
