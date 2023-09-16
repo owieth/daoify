@@ -124,10 +124,10 @@ export default function Home() {
             <div className="relative z-10 mt-48 flex flex-col items-center gap-12 text-center">
               <div>
                 <h1 className="text-md font-bold md:text-lg">
-                  Built for the future.
+                  Building future for today.
                 </h1>
                 <h1 className="text-md font-bold md:text-lg">
-                  Available today.
+                  Join the Journey.
                 </h1>
               </div>
 
