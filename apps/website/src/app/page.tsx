@@ -1,3 +1,5 @@
+'use client';
+
 import Cobe from '@/components/cobe/cobe';
 import Features from '@/components/features/features';
 import Feedbacks from '@/components/feedbacks/feedbacks';
@@ -7,10 +9,39 @@ import ShowCase from '@/components/showcase/showcase';
 import Stars from '@/components/stars/stars';
 import Teaser from '@/components/teaser/teaser';
 import H2 from '@/components/text/h2';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { ReactNode } from 'react';
 
 const styles = {
   main: ['flex', 'flex-col', 'items-center', 'min-h-screen'].join(' '),
+};
+
+const FadeInContent = ({
+  children,
+  delay,
+}: {
+  children: ReactNode;
+  delay?: number;
+}) => {
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: -20 },
+      }}
+      transition={{
+        delay,
+        duration: 0.25,
+        ease: 'easeOut',
+      }}
+    >
+      {children}
+    </motion.div>
+  );
 };
 
 export default function Home() {
@@ -19,15 +50,23 @@ export default function Home() {
       <Stars />
 
       <div className="pt-48">
-        <Teaser />
+        <FadeInContent>
+          <Teaser />
+        </FadeInContent>
       </div>
 
       <Section small>
-        <h1 className="text-md font-bold md:text-lg">Latest Legal Wrapper</h1>
-        <span className="w-2/4 text-center text-sm md:text-base">
-          Zero code, maximum speed. Make professional sites easy, fast and fun
-          while delivering best-in-className SEO, performance.
-        </span>
+        <FadeInContent delay={0.2}>
+          <h1 className="text-md font-bold md:text-lg">Latest Legal Wrapper</h1>
+        </FadeInContent>
+        <FadeInContent delay={0.4}>
+          <div className="flex justify-center">
+            <span className="w-2/4 text-sm md:text-base">
+              Zero code, maximum speed. Make professional sites easy, fast and
+              fun while delivering best-in-className SEO, performance.
+            </span>
+          </div>
+        </FadeInContent>
       </Section>
 
       <Section small>

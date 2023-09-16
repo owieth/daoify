@@ -50,8 +50,8 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
-
 ### INSPO
+
 - https://fig.io/
 - https://reflect.app/
 - https://rebuilding-linear.vercel.app/
