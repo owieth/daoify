@@ -83,14 +83,14 @@ export default function Home() {
           <Features />
         </Section>
 
-        <Section className="hidden md:flex">
+        {/* <Section className="hidden md:flex">
           <H2>Always at your command</H2>
           <span className="text-center text-base"></span>
 
           <div className="border-line relative flex h-full w-full flex-col items-center overflow-hidden rounded-xl border p-4 lg:p-6">
             <Keyboard />
           </div>
-        </Section>
+        </Section> */}
 
         <Section noPadding>
           <div className="relative flex w-full justify-center overflow-hidden">
