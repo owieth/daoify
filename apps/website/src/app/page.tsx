@@ -1,5 +1,6 @@
 'use client';
 
+import { Card } from '@/components/card/card';
 import Cobe from '@/components/cobe/cobe';
 import Features from '@/components/features/features';
 import Feedbacks from '@/components/feedbacks/feedbacks';
@@ -10,6 +11,12 @@ import ShowCase from '@/components/showcase/showcase';
 import Stars from '@/components/stars/stars';
 import Teaser from '@/components/teaser/teaser';
 import H2 from '@/components/text/h2';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ReactNode } from 'react';
@@ -17,6 +24,16 @@ import { ReactNode } from 'react';
 const styles = {
   main: ['flex', 'flex-col', 'items-center', 'min-h-screen'].join(' '),
 };
+
+const qa = [
+  'Do you offer any discounts for annual subscriptions?',
+  'What payment methods do you accept?',
+  'Is there a free trial available?',
+  'Are there any limits on the number of domains?',
+  'Are there any limits on the number of team members?',
+  'Who can I contact about a custom plan?',
+  'What happens if I send more emails than my plan allow?',
+];
 
 const FadeInContent = ({
   children,
@@ -128,6 +145,25 @@ export default function Home() {
           <div className="absolute bottom-0 z-[2] h-full w-full bg-gradient-to-t from-black via-black via-35% to-transparent" />
           <Cobe />
         </div>
+      </Section>
+
+      <Section small>
+        <Separator />
+
+        <H2 className="my-20">Frequently Asked Questions</H2>
+
+        <Accordion type="single" collapsible className="grid w-96 gap-4">
+          {qa.map((question, i) => (
+            <AccordionItem key={i} value={`item-${i}`} asChild>
+              <Card nested>
+                <AccordionTrigger>{question}</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </Card>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </Section>
 
       {/* <Section>

@@ -1,13 +1,15 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { ReactNode, useRef, useState } from 'react';
 
 type Props = {
   shiny?: boolean;
+  nested?: boolean;
   children: ReactNode;
 };
 
-export const Card = ({ shiny, children }: Props) => {
+export const Card = ({ shiny, nested, children }: Props) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -59,7 +61,12 @@ export const Card = ({ shiny, children }: Props) => {
         />
       )}
 
-      <div className="grid gap-16 rounded-2xl bg-gradient-to-tr from-white to-neutral-50 p-8 dark:from-black dark:to-neutral-950">
+      <div
+        className={cn(
+          'rounded-2xl bg-gradient-to-tr from-white to-neutral-50 dark:from-black dark:to-neutral-950',
+          nested ? 'p-4' : 'grid gap-16 p-8',
+        )}
+      >
         {children}
       </div>
     </div>
