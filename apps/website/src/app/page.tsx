@@ -5,6 +5,7 @@ import Features from '@/components/features/features';
 import Feedbacks from '@/components/feedbacks/feedbacks';
 import Keyboard from '@/components/keyboard/keyboard';
 import Section from '@/components/section/section';
+import Separator from '@/components/separator/separator';
 import ShowCase from '@/components/showcase/showcase';
 import Stars from '@/components/stars/stars';
 import Teaser from '@/components/teaser/teaser';
@@ -76,10 +77,33 @@ export default function Home() {
       </Section>
 
       <Section small>
-        <span className="text-center text-base">Features</span>
+        <Separator />
+
+        <span className="mt-20 text-center text-base">About</span>
         <H2>Cutting-edge features for DAOs</H2>
 
-        <Features />
+        <span className="w-2/4 text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </span>
+
+        <div className="mt-20">
+          <Features />
+        </div>
+      </Section>
+
+      <Section small>
+        <Separator />
+
+        <span className="mt-20 text-center text-base">Process</span>
+        <H2>Cutting-edge features for DAOs</H2>
+
+        <div className="mt-20"></div>
       </Section>
 
       {/* <Section className="hidden md:flex">
