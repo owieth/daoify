@@ -89,7 +89,9 @@ export default function Home() {
 
       <Section small>
         <div className="relative md:px-8 lg:px-16">
-          <ShowCase />
+          <FadeInContent delay={0.6}>
+            <Image src={'/dashboard.svg'} alt="" height={800} width={1600} />
+          </FadeInContent>
         </div>
       </Section>
 
