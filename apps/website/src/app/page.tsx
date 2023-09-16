@@ -72,7 +72,7 @@ const FadeInContent = ({
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className={styles.main} id="home">
       <Stars />
 
       <div className="pt-48">

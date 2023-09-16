@@ -227,6 +227,7 @@ const Navigation = () => {
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const styles = {
     header: [
@@ -264,7 +265,7 @@ const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <Link href="/" className={styles.link}>
+        <Link href={pathname === '/' ? '#home' : '/'} className={styles.link}>
           <Logo height={24} width={24} />
         </Link>
         <Navigation />
