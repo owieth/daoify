@@ -75,15 +75,14 @@ export default function Home() {
         </div>
       </Section>
 
-      <div className="z-[1] bg-black">
-        <Section small>
-          <span className="text-center text-base">Features</span>
-          <H2>Cutting-edge features for DAOs</H2>
+      <Section small>
+        <span className="text-center text-base">Features</span>
+        <H2>Cutting-edge features for DAOs</H2>
 
-          <Features />
-        </Section>
+        <Features />
+      </Section>
 
-        {/* <Section className="hidden md:flex">
+      {/* <Section className="hidden md:flex">
           <H2>Always at your command</H2>
           <span className="text-center text-base"></span>
 
@@ -92,52 +91,51 @@ export default function Home() {
           </div>
         </Section> */}
 
-        <Section noPadding>
-          <div className="relative flex w-full justify-center overflow-hidden">
-            <div className="absolute bottom-0 top-0 z-10 flex items-center justify-center">
-              <div className="relative m-auto w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-[200px] before:bg-[linear-gradient(to_right,black_0%,rgba(255,255,255,0)_100%)] before:content-[''] after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[200px] after:bg-[linear-gradient(to_left,black_0%,rgba(255,255,255,0)_100%)] after:content-['']">
-                <div className="animate-infinite-slider flex w-full">
-                  <Feedbacks />
-                </div>
+      <Section noPadding>
+        <div className="relative flex w-full justify-center overflow-hidden">
+          <div className="absolute bottom-0 top-0 z-10 flex items-center justify-center">
+            <div className="relative m-auto w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-[200px] before:bg-[linear-gradient(to_right,black_0%,rgba(255,255,255,0)_100%)] before:content-[''] after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[200px] after:bg-[linear-gradient(to_left,black_0%,rgba(255,255,255,0)_100%)] after:content-['']">
+              <div className="animate-infinite-slider flex w-full">
+                <Feedbacks />
               </div>
             </div>
-
-            <div className="absolute bottom-0 z-[2] h-full w-full bg-gradient-to-t from-black via-black via-35% to-transparent" />
-            <Cobe />
           </div>
-        </Section>
 
-        {/* <Section>
+          <div className="absolute bottom-0 z-[2] h-full w-full bg-gradient-to-t from-black via-black via-35% to-transparent" />
+          <Cobe />
+        </div>
+      </Section>
+
+      {/* <Section>
           <Analytics />
         </Section> */}
 
-        <Section noPadding>
-          <div className="relative min-h-[60rem] w-full">
-            <div className="absolute left-0 right-0 top-0 flex w-full justify-center overflow-hidden">
-              <div className="aspect-square max-h-[60rem] min-w-[60rem] overflow-hidden rounded-full bg-gradient-to-b from-white from-0% via-white/30 via-[2%] to-white/0 to-25% p-px">
-                <div className="relative h-full w-full overflow-hidden rounded-full bg-black">
-                  <div className="mx-auto h-64 w-64 -translate-y-1/2 rounded-full bg-white/10 blur-3xl" />
-                </div>
-              </div>
-            </div>
-
-            <div className="relative z-10 mt-48 flex flex-col items-center gap-12 text-center">
-              <div>
-                <h1 className="text-md font-bold md:text-lg">
-                  Building future for today.
-                </h1>
-                <h1 className="text-md font-bold md:text-lg">
-                  Join the Journey.
-                </h1>
-              </div>
-
-              <div className="relative h-[300px] w-[300px]">
-                <Image src={'appIcon.svg'} alt="" fill />
+      <Section noPadding>
+        <div className="relative min-h-[60rem] w-full">
+          <div className="absolute left-0 right-0 top-0 flex w-full justify-center overflow-hidden">
+            <div className="aspect-square max-h-[60rem] min-w-[60rem] overflow-hidden rounded-full bg-gradient-to-b from-white from-0% via-white/30 via-[2%] to-white/0 to-25% p-px">
+              <div className="relative h-full w-full overflow-hidden rounded-full bg-black">
+                <div className="mx-auto h-64 w-64 -translate-y-1/2 rounded-full bg-white/10 blur-3xl" />
               </div>
             </div>
           </div>
-        </Section>
-      </div>
+
+          <div className="relative z-10 mt-48 flex flex-col items-center gap-12 text-center">
+            <div>
+              <h1 className="text-md font-bold md:text-lg">
+                Building future for today.
+              </h1>
+              <h1 className="text-md font-bold md:text-lg">
+                Join the Journey.
+              </h1>
+            </div>
+
+            <div className="relative h-[300px] w-[300px]">
+              <Image src={'appIcon.svg'} alt="" fill />
+            </div>
+          </div>
+        </div>
+      </Section>
     </main>
   );
 }
