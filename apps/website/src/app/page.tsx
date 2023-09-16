@@ -93,7 +93,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section small>
+      <Section id="about" small>
         <Separator />
 
         <span className="mt-20 text-center text-base">About</span>
@@ -114,7 +114,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section small>
+      <Section id="progress" small>
         <Separator />
 
         <span className="mt-20 text-center text-base">Process</span>

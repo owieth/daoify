@@ -1,13 +1,14 @@
 import { ReactNode } from 'react';
 
 type Props = {
+  id?: string;
   small?: boolean;
   noPadding?: boolean;
   className?: string;
   children: ReactNode;
 };
 
-const Section = ({ small, noPadding, className, children }: Props) => {
+const Section = ({ id, small, noPadding, className, children }: Props) => {
   const styles = {
     section: [
       small ? 'mt-[128px]' : 'mt-[400px]',
@@ -20,7 +21,7 @@ const Section = ({ small, noPadding, className, children }: Props) => {
   };
 
   return (
-    <section className={`${styles.section} ${className ?? ''}`}>
+    <section id={id} className={`${styles.section} ${className ?? ''}`}>
       {children}
     </section>
   );
