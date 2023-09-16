@@ -70,13 +70,13 @@ const Footer = () => {
               <FooterItem link="">Pricing</FooterItem>
               <FooterItem link="">Features</FooterItem>
               <FooterItem link="">Changelog</FooterItem>
-              <FooterItem link="">Feedback</FooterItem>
+              {/* <FooterItem link="">Feedback</FooterItem> */}
             </Column>
 
             <Column>
               <FooterLabel>Company</FooterLabel>
               <FooterItem link="">About</FooterItem>
-              <FooterItem link="">Blog</FooterItem>
+              {/* <FooterItem link="">Blog</FooterItem> */}
               <FooterItem link="https://www.linkedin.com/company/94252137/admin/">
                 LinkedIn
               </FooterItem>
@@ -86,8 +86,8 @@ const Footer = () => {
             <Column>
               <FooterLabel>Resources</FooterLabel>
               <FooterItem link="">Design</FooterItem>
-              <FooterItem link="">Code</FooterItem>
-              <FooterItem link="">Stack</FooterItem>
+              {/* <FooterItem link="">Code</FooterItem> */}
+              {/* <FooterItem link="">Stack</FooterItem> */}
               <FooterItem link="">Documentation</FooterItem>
             </Column>
 
@@ -95,8 +95,7 @@ const Footer = () => {
               <FooterLabel>Legal</FooterLabel>
               <FooterItem link="">Privacy Policy</FooterItem>
               <FooterItem link="">Terms of Service</FooterItem>
-              <FooterItem link="">Acceptable Use</FooterItem>
-              <FooterItem link="">Bug Bounty Programm</FooterItem>
+              {/* <FooterItem link="">Bug Bounty Programm</FooterItem> */}
             </Column>
           </div>
         </div>
