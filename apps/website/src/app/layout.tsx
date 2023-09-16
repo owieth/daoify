@@ -6,7 +6,7 @@ import Footer from '@/components/footer/footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'DAOify',
+  title: 'DAOify · Future Companies',
   description: 'Latest Legal Wrapper for DAOs',
 };
 
