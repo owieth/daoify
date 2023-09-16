@@ -11,7 +11,7 @@
     "eslint-config-custom": "*",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
-    "turbo": "1.10.13"
+    "turbo": "^1.10.14"
   },
   "name": "turborepo-example",
   "packageManager": "yarn@1.22.15",
