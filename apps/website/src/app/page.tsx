@@ -92,7 +92,7 @@ export default function Home() {
           culpa qui officia deserunt mollit anim id est laborum.
         </span>
 
-        <div className="mt-20">
+        <div className="my-20">
           <Features />
         </div>
       </Section>
