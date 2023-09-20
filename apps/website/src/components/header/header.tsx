@@ -20,9 +20,9 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 
 const navigation = [
-  { name: 'About', href: '#about' },
+  { name: 'About', href: '/#about' },
   // { name: 'Blog', href: '/blog', className: 'hidden xs:block' },
-  { name: 'Process', href: '#process', className: 'hidden md:block' },
+  { name: 'Process', href: '/#process', className: 'hidden md:block' },
   { name: 'Pricing', href: '/pricing', className: 'hidden md:block' },
   { name: 'Changelog', href: '/changelog', className: 'hidden md:block' },
   { name: 'Docs', href: '/docs', className: 'hidden xs:block' },
