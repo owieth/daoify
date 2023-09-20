@@ -162,7 +162,11 @@ export default function Home() {
 
         <H2 className="my-20">Frequently Asked Questions</H2>
 
-        <Accordion type="single" collapsible className="grid w-96 gap-4">
+        <Accordion
+          type="single"
+          collapsible
+          className="grid w-full max-w-3xl gap-6"
+        >
           {qa.map((question, i) => (
             <AccordionItem key={i} value={`item-${i}`} asChild>
               <Card nested>
