@@ -42,6 +42,11 @@ module.exports = {
             transform: 'rotate(90deg)',
           },
         },
+        dripping: {
+          to: {
+            transform: 'translateY(300px)',
+          },
+        },
         'background-shine': {
           from: {
             backgroundPosition: '0 0',
@@ -106,6 +111,7 @@ module.exports = {
           'glow-line-horizontal var(--animation-duration) ease-in forwards',
         'glow-line-vertical':
           'glow-line-vertical var(--animation-duration) ease-in forwards',
+        'dripping': 'dripping 6s linear infinite'
       },
     },
   },
