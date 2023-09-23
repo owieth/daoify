@@ -130,7 +130,30 @@ export default function Home() {
         <span className="mt-20 text-center text-base">Process</span>
         <H2>Cutting-edge features for DAOs</H2>
 
-        <div className="mt-20"></div>
+        <div className="mt-20 flex w-full max-w-3xl flex-col gap-10">
+          <Card shiny>
+            <span className="font-bold">Create your DAO</span>
+            <span className="text-center text-sm">Lorem Ipsum</span>
+          </Card>
+
+          <div className="flex flex-col items-center">
+            <div className="h-[300px] w-px bg-gradient-to-t from-white/0 from-0% via-white/50 via-50% to-white/0 to-100%" />
+          </div>
+
+          <Card shiny>
+            <span className="font-bold">Associate your DAO</span>
+            <span className="text-center text-sm">Lorem Ipsum</span>
+          </Card>
+
+          <div className="flex flex-col items-center">
+            <div className="h-[300px] w-px bg-gradient-to-t from-white/0 from-0% via-white/50 via-50% to-white/0 to-100%" />
+          </div>
+
+          <Card shiny>
+            <span className="font-bold">Run your DAO</span>
+            <span className="text-center text-sm">Lorem Ipsum</span>
+          </Card>
+        </div>
       </Section>
 
       {/* <Section className="hidden md:flex">
