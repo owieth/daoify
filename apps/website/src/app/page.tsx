@@ -4,10 +4,8 @@ import { Card } from '@/components/card/card';
 import Cobe from '@/components/cobe/cobe';
 import Features from '@/components/features/features';
 import Feedbacks from '@/components/feedbacks/feedbacks';
-import Keyboard from '@/components/keyboard/keyboard';
 import Section from '@/components/section/section';
 import Separator from '@/components/separator/separator';
-import ShowCase from '@/components/showcase/showcase';
 import Stars from '@/components/stars/stars';
 import Teaser from '@/components/teaser/teaser';
 import H2 from '@/components/text/h2';
@@ -17,14 +15,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ReactNode } from 'react';
@@ -119,9 +109,11 @@ export default function Home() {
           culpa qui officia deserunt mollit anim id est laborum.
         </span>
 
-        <div className="my-20">
-          <Features />
-        </div>
+        <FadeInContent delay={0.2}>
+          <div className="my-20">
+            <Features />
+          </div>
+        </FadeInContent>
       </Section>
 
       <Section id="process" small>
@@ -131,32 +123,38 @@ export default function Home() {
         <H2>Cutting-edge features for DAOs</H2>
 
         <div className="mt-20 flex w-full max-w-3xl flex-col">
-          <Card shiny>
-            <span className="font-bold">Create your DAO</span>
-            <span className="text-center text-sm">Lorem Ipsum</span>
-          </Card>
+          <FadeInContent delay={0.2}>
+            <Card shiny>
+              <span className="font-bold">Create your DAO</span>
+              <span className="text-center text-sm">Lorem Ipsum</span>
+            </Card>
 
-          <div className="flex flex-col items-center ">
-            <div className="relative h-[100px] w-px overflow-hidden bg-gradient-to-b from-white/0 from-0% via-white/30 via-50% to-white/0 to-100%">
-              <span className="mask-gradient animate-dripping absolute inset-0 h-[30px] w-[100%] overflow-hidden rounded-full bg-gradient-to-b from-white/10 to-white/100" />
+            <div className="flex flex-col items-center ">
+              <div className="relative h-[100px] w-px overflow-hidden bg-gradient-to-b from-white/0 from-0% via-white/30 via-50% to-white/0 to-100%">
+                <span className="mask-gradient animate-dripping absolute inset-0 h-[30px] w-[100%] overflow-hidden rounded-full bg-gradient-to-b from-white/10 to-white/100" />
+              </div>
             </div>
-          </div>
+          </FadeInContent>
 
-          <Card shiny>
-            <span className="font-bold">Associate your DAO</span>
-            <span className="text-center text-sm">Lorem Ipsum</span>
-          </Card>
+          <FadeInContent delay={0.4}>
+            <Card shiny>
+              <span className="font-bold">Associate your DAO</span>
+              <span className="text-center text-sm">Lorem Ipsum</span>
+            </Card>
 
-          <div className="flex flex-col items-center ">
-            <div className="relative h-[100px] w-px overflow-hidden bg-gradient-to-b from-white/0 from-0% via-white/30 via-50% to-white/0 to-100%">
-              <span className="mask-gradient animate-dripping absolute inset-0 h-[30px] w-[100%] overflow-hidden rounded-full bg-gradient-to-b from-white/10 to-white/100 delay-1000" />
+            <div className="flex flex-col items-center ">
+              <div className="relative h-[100px] w-px overflow-hidden bg-gradient-to-b from-white/0 from-0% via-white/30 via-50% to-white/0 to-100%">
+                <span className="mask-gradient animate-dripping absolute inset-0 h-[30px] w-[100%] overflow-hidden rounded-full bg-gradient-to-b from-white/10 to-white/100 delay-1000" />
+              </div>
             </div>
-          </div>
+          </FadeInContent>
 
-          <Card shiny>
-            <span className="font-bold">Run your DAO</span>
-            <span className="text-center text-sm">Lorem Ipsum</span>
-          </Card>
+          <FadeInContent delay={0.6}>
+            <Card shiny>
+              <span className="font-bold">Run your DAO</span>
+              <span className="text-center text-sm">Lorem Ipsum</span>
+            </Card>
+          </FadeInContent>
         </div>
       </Section>
 
@@ -174,13 +172,18 @@ export default function Home() {
           <div className="absolute bottom-0 top-0 z-10 flex items-center justify-center">
             <div className="relative m-auto w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-[200px] before:bg-[linear-gradient(to_right,black_0%,rgba(255,255,255,0)_100%)] before:content-[''] after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[200px] after:bg-[linear-gradient(to_left,black_0%,rgba(255,255,255,0)_100%)] after:content-['']">
               <div className="animate-infinite-slider flex w-full">
-                <Feedbacks />
+                <FadeInContent delay={0.4}>
+                  <Feedbacks />
+                </FadeInContent>
               </div>
             </div>
           </div>
 
           <div className="absolute bottom-0 z-[2] h-full w-full bg-gradient-to-t from-black via-black via-35% to-transparent" />
-          <Cobe />
+
+          <FadeInContent delay={0.2}>
+            <Cobe />
+          </FadeInContent>
         </div>
       </Section>
 
@@ -196,12 +199,14 @@ export default function Home() {
         >
           {qa.map((question, i) => (
             <AccordionItem key={i} value={`item-${i}`} asChild>
-              <Card nested>
-                <AccordionTrigger>{question}</AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </Card>
+              <FadeInContent delay={(i * 2) / 10}>
+                <Card nested>
+                  <AccordionTrigger>{question}</AccordionTrigger>
+                  <AccordionContent>
+                    Yes. It adheres to the WAI-ARIA design pattern.
+                  </AccordionContent>
+                </Card>
+              </FadeInContent>
             </AccordionItem>
           ))}
         </Accordion>
@@ -213,26 +218,34 @@ export default function Home() {
 
       <Section noPadding>
         <div className="relative min-h-[60rem] w-full">
-          <div className="absolute left-0 right-0 top-0 flex w-full justify-center overflow-hidden">
-            <div className="aspect-square max-h-[60rem] min-w-[60rem] overflow-hidden rounded-full bg-gradient-to-b from-white from-0% via-white/30 via-[2%] to-white/0 to-25% p-px">
-              <div className="relative h-full w-full overflow-hidden rounded-full bg-black">
-                <div className="mx-auto h-64 w-64 -translate-y-1/2 rounded-full bg-white/10 blur-3xl" />
+          <FadeInContent delay={0.2}>
+            <div className="absolute left-0 right-0 top-0 flex w-full justify-center overflow-hidden">
+              <div className="aspect-square max-h-[60rem] min-w-[60rem] overflow-hidden rounded-full bg-gradient-to-b from-white from-0% via-white/30 via-[2%] to-white/0 to-25% p-px">
+                <div className="relative h-full w-full overflow-hidden rounded-full bg-black">
+                  <div className="mx-auto h-64 w-64 -translate-y-1/2 rounded-full bg-white/10 blur-3xl" />
+                </div>
               </div>
             </div>
-          </div>
+          </FadeInContent>
 
           <div className="relative z-10 mt-48 flex flex-col items-center gap-12 text-center">
             <div>
-              <h1 className="text-md font-bold md:text-lg">
-                Building future for today.
-              </h1>
-              <h1 className="text-md font-bold md:text-lg">
-                Join the Journey.
-              </h1>
+              <FadeInContent delay={0.4}>
+                <h1 className="text-md font-bold md:text-lg">
+                  Building future for today.
+                </h1>
+              </FadeInContent>
+              <FadeInContent delay={0.6}>
+                <h1 className="text-md font-bold md:text-lg">
+                  Join the Journey.
+                </h1>
+              </FadeInContent>
             </div>
 
             <div className="relative h-[300px] w-[300px]">
-              <Image src={'appIcon.svg'} alt="" fill />
+              <FadeInContent delay={0.8}>
+                <Image src={'appIcon.svg'} alt="" fill />
+              </FadeInContent>
             </div>
           </div>
         </div>
