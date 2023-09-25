@@ -47,61 +47,59 @@ const FooterItem = ({
   );
 };
 
-const Footer = () => {
-  return (
-    <footer className="relative z-10 overflow-hidden border-t border-white/10 bg-black">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative text-sm text-white/50 sm:gap-16">
-          <div className="grid grid-cols-4 items-start gap-8 py-16 sm:grid-cols-8 lg:grid-cols-12">
-            <div className="col-span-4 sm:col-span-8 lg:col-span-4">
-              <div className="grid max-w-[15rem] gap-6">
-                <Link href="/">
-                  <Logo height={24} width={24} />
-                </Link>
-                <p>Creating next gen DAO Software.</p>
-                <p className="text-xs">
-                  © swissDAO Labs 2023. All rights reserved.
-                </p>
-              </div>
+const Footer = () => (
+  <footer className="relative z-10 overflow-hidden border-t border-white/10 bg-black">
+    <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative text-sm text-white/50 sm:gap-16">
+        <div className="grid grid-cols-4 items-start gap-8 py-16 sm:grid-cols-8 lg:grid-cols-12">
+          <div className="col-span-4 sm:col-span-8 lg:col-span-4">
+            <div className="grid max-w-[15rem] gap-6">
+              <Link href="/">
+                <Logo height={24} width={24} />
+              </Link>
+              <p>Creating next gen DAO Software.</p>
+              <p className="text-xs">
+                © swissDAO Labs 2023. All rights reserved.
+              </p>
             </div>
-
-            <Column>
-              <FooterLabel>Product</FooterLabel>
-              <FooterItem link="">Pricing</FooterItem>
-              <FooterItem link="">Features</FooterItem>
-              <FooterItem link="">Changelog</FooterItem>
-              {/* <FooterItem link="">Feedback</FooterItem> */}
-            </Column>
-
-            <Column>
-              <FooterLabel>Company</FooterLabel>
-              <FooterItem link="">About</FooterItem>
-              {/* <FooterItem link="">Blog</FooterItem> */}
-              <FooterItem link="https://www.linkedin.com/company/94252137/admin/">
-                LinkedIn
-              </FooterItem>
-              <FooterItem link="">Twitter</FooterItem>
-            </Column>
-
-            <Column>
-              <FooterLabel>Resources</FooterLabel>
-              <FooterItem link="">Design</FooterItem>
-              {/* <FooterItem link="">Code</FooterItem> */}
-              {/* <FooterItem link="">Stack</FooterItem> */}
-              <FooterItem link="">Documentation</FooterItem>
-            </Column>
-
-            <Column>
-              <FooterLabel>Legal</FooterLabel>
-              <FooterItem link="">Privacy Policy</FooterItem>
-              <FooterItem link="">Terms of Service</FooterItem>
-              {/* <FooterItem link="">Bug Bounty Programm</FooterItem> */}
-            </Column>
           </div>
+
+          <Column>
+            <FooterLabel>Product</FooterLabel>
+            <FooterItem link="">Pricing</FooterItem>
+            <FooterItem link="">Features</FooterItem>
+            <FooterItem link="">Changelog</FooterItem>
+            {/* <FooterItem link="">Feedback</FooterItem> */}
+          </Column>
+
+          <Column>
+            <FooterLabel>Company</FooterLabel>
+            <FooterItem link="">About</FooterItem>
+            {/* <FooterItem link="">Blog</FooterItem> */}
+            <FooterItem link="https://www.linkedin.com/company/94252137/admin/">
+              LinkedIn
+            </FooterItem>
+            <FooterItem link="">Twitter</FooterItem>
+          </Column>
+
+          <Column>
+            <FooterLabel>Resources</FooterLabel>
+            <FooterItem link="">Design</FooterItem>
+            {/* <FooterItem link="">Code</FooterItem> */}
+            {/* <FooterItem link="">Stack</FooterItem> */}
+            <FooterItem link="">Documentation</FooterItem>
+          </Column>
+
+          <Column>
+            <FooterLabel>Legal</FooterLabel>
+            <FooterItem link="">Privacy Policy</FooterItem>
+            <FooterItem link="">Terms of Service</FooterItem>
+            {/* <FooterItem link="">Bug Bounty Programm</FooterItem> */}
+          </Column>
         </div>
       </div>
-    </footer>
-  );
-};
+    </div>
+  </footer>
+);
 
 export default Footer;
