@@ -262,6 +262,8 @@ const Header = () => {
     ].join(' '),
   };
 
+  const submitWaitlist = () => setOpen(!open);
+
   return (
     <>
       <header className={styles.header}>
@@ -307,6 +309,7 @@ const Header = () => {
           <DialogFooter>
             <Button
               className="bg-white text-black hover:bg-slate-300"
+              onClick={submitWaitlist}
               type="submit"
             >
               Save my spot!
