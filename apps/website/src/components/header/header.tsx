@@ -273,9 +273,9 @@ const Header = () => {
       </header>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="bg-foreground sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle className="text-md text-black">
+            <DialogTitle className="text-md text-white">
               Join Waitlist
             </DialogTitle>
             <DialogDescription>
@@ -284,7 +284,7 @@ const Header = () => {
           </DialogHeader>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right text-black">
+              <Label htmlFor="name" className="text-right text-white">
                 Name
               </Label>
               <Input
@@ -294,7 +294,7 @@ const Header = () => {
               />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="email" className="text-right text-black">
+              <Label htmlFor="email" className="text-right text-white">
                 Email
               </Label>
               <Input
@@ -305,7 +305,12 @@ const Header = () => {
             </div>
           </div>
           <DialogFooter>
-            <Button type="submit">Save my spot!</Button>
+            <Button
+              className="bg-white text-black hover:bg-slate-300"
+              type="submit"
+            >
+              Save my spot!
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
