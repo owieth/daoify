@@ -76,7 +76,7 @@ const Footer = () => (
             <FooterLabel>Company</FooterLabel>
             <FooterItem link="">About</FooterItem>
             {/* <FooterItem link="">Blog</FooterItem> */}
-            <FooterItem link="https://www.linkedin.com/company/94252137/admin/">
+            <FooterItem link="https://www.linkedin.com/company/daoify-it">
               LinkedIn
             </FooterItem>
             <FooterItem link="">Twitter</FooterItem>
