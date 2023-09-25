@@ -305,7 +305,7 @@ const Header = () => {
             </div>
           </div>
           <DialogFooter>
-            <Button type="submit">Save changes</Button>
+            <Button type="submit">Save my spot!</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
