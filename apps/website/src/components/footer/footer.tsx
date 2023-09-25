@@ -66,9 +66,9 @@ const Footer = () => (
 
           <Column>
             <FooterLabel>Product</FooterLabel>
-            <FooterItem link="">Pricing</FooterItem>
-            <FooterItem link="">Features</FooterItem>
-            <FooterItem link="">Changelog</FooterItem>
+            <FooterItem link="/pricing">Pricing</FooterItem>
+            <FooterItem link="/#about">Features</FooterItem>
+            <FooterItem link="/changelog">Changelog</FooterItem>
             {/* <FooterItem link="">Feedback</FooterItem> */}
           </Column>
 
