@@ -63,7 +63,7 @@ export const Card = ({ shiny, nested, children }: Props) => {
 
       <div
         className={cn(
-          'rounded-2xl bg-gradient-to-tr from-white to-neutral-50 dark:from-black dark:to-neutral-950',
+          'h-full rounded-2xl bg-gradient-to-tr from-white to-neutral-50 dark:from-black dark:to-neutral-950',
           nested ? 'p-4' : 'grid gap-16 p-8',
         )}
       >

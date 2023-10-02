@@ -77,7 +77,7 @@ export default function Home() {
         </FadeInContent>
         <FadeInContent delay={0.4}>
           <div className="flex justify-center">
-            <span className="w-2/4 text-sm md:text-base">
+            <span className="text-sm md:text-base">
               Your one-stop shop for your swiss dao legal wrapper setup.
             </span>
           </div>
@@ -229,7 +229,7 @@ export default function Home() {
             <div>
               <FadeInContent delay={0.4}>
                 <h1 className="text-md font-bold md:text-lg">
-                  Building next-generation companies.
+                  Building next-generation <br /> companies.
                 </h1>
               </FadeInContent>
             </div>
