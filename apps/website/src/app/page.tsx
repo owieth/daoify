@@ -24,13 +24,13 @@ const styles = {
 };
 
 const qa = [
-  'Do you offer any discounts for annual subscriptions?',
-  'What payment methods do you accept?',
-  'Is there a free trial available?',
-  'Are there any limits on the number of domains?',
-  'Are there any limits on the number of team members?',
-  'Who can I contact about a custom plan?',
-  'What happens if I send more emails than my plan allow?',
+  { question: 'Why should I incorporate in Switzerland?', answer: '' },
+  { question: 'How long does it take to setup the Legal Wrapper?', answer: '' },
+  { question: 'What is a DAO Legal Wrapper?', answer: '' },
+  { question: 'Can I customized my legal Wrapper Smart Contract?', answer: '' },
+  { question: 'Can DAOify alternate my contract’s details?', answer: '' },
+  { question: 'How does DAOify`s KYC Processing work?', answer: '' },
+  { question: 'Which payment methods are supported?', answer: '' },
 ];
 
 const FadeInContent = ({
@@ -78,8 +78,7 @@ export default function Home() {
         <FadeInContent delay={0.4}>
           <div className="flex justify-center">
             <span className="w-2/4 text-sm md:text-base">
-              Zero code, maximum speed. Make professional sites easy, fast and
-              fun while delivering best-in-className SEO, performance.
+              Your one-stop shop for your swiss dao legal wrapper setup.
             </span>
           </div>
         </FadeInContent>
@@ -138,7 +137,7 @@ export default function Home() {
 
           <FadeInContent delay={0.4}>
             <Card shiny>
-              <span className="font-bold">Associate your DAO</span>
+              <span className="font-bold">Wrap your DAO</span>
               <span className="text-center text-sm">Lorem Ipsum</span>
             </Card>
 
@@ -151,7 +150,7 @@ export default function Home() {
 
           <FadeInContent delay={0.6}>
             <Card shiny>
-              <span className="font-bold">Run your DAO</span>
+              <span className="font-bold">Operate your DAO</span>
               <span className="text-center text-sm">Lorem Ipsum</span>
             </Card>
           </FadeInContent>
@@ -197,14 +196,12 @@ export default function Home() {
           collapsible
           className="grid w-full max-w-3xl gap-6"
         >
-          {qa.map((question, i) => (
+          {qa.map(({ question, answer }, i) => (
             <AccordionItem key={i} value={`item-${i}`} asChild>
               <FadeInContent delay={(i * 2) / 10}>
                 <Card nested>
                   <AccordionTrigger>{question}</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
+                  <AccordionContent>{answer}</AccordionContent>
                 </Card>
               </FadeInContent>
             </AccordionItem>
@@ -232,12 +229,7 @@ export default function Home() {
             <div>
               <FadeInContent delay={0.4}>
                 <h1 className="text-md font-bold md:text-lg">
-                  Building future for today.
-                </h1>
-              </FadeInContent>
-              <FadeInContent delay={0.6}>
-                <h1 className="text-md font-bold md:text-lg">
-                  Join the Journey.
+                  Building next-generation companies.
                 </h1>
               </FadeInContent>
             </div>

@@ -53,7 +53,7 @@ const Teaser = () => {
       >
         <span className={styles.teaser}>
           <IconAnnouncement />
-          <div className="px-2">Announcing our Launch Event</div>{' '}
+          <div className="px-2">Incorporate your DAO</div>{' '}
           <div className={styles.button}>
             Join the waitlist
             <IconLink />
