@@ -1,7 +1,7 @@
-import { Card } from "@/src/components/card/card";
-import Section from "@/src/components/section/section";
-import H2 from "@/src/components/text/h2";
-import { Button } from "@ui/components/ui/button";
+import { Card } from '@/src/components/card/card';
+import Section from '@/src/components/section/section';
+import H2 from '@/src/components/text/h2';
+import { Button } from '@ui/components/ui/button';
 
 const features = [
   'Legal Consultation',
