@@ -14,10 +14,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from '../ui/dialog';
-import { Label } from '../ui/label';
-import { Input } from '../ui/input';
-import { Button } from '../ui/button';
+} from '@ui/components/ui/dialog';
+import { Label } from '@ui/components/ui/label';
+import { Input } from '@ui/components/ui/input';
+import { Button } from '@ui/components/ui/button';
 
 const navigation = [
   { name: 'About', href: '/#about' },

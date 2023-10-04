@@ -1,23 +1,23 @@
 'use client';
 
-import { Card } from '@/components/card/card';
-import Cobe from '@/components/cobe/cobe';
-import Features from '@/components/features/features';
-import Feedbacks from '@/components/feedbacks/feedbacks';
-import Section from '@/components/section/section';
-import Separator from '@/components/separator/separator';
-import Stars from '@/components/stars/stars';
-import Teaser from '@/components/teaser/teaser';
-import H2 from '@/components/text/h2';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from 'ui/components/ui/accordion';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ReactNode } from 'react';
+import { Card } from '../components/card/card';
+import Cobe from '../components/cobe/cobe';
+import Features from '../components/features/features';
+import Feedbacks from '../components/feedbacks/feedbacks';
+import Section from '../components/section/section';
+import Separator from '../components/separator/separator';
+import Stars from '../components/stars/stars';
+import Teaser from '../components/teaser/teaser';
+import H2 from '../components/text/h2';
 
 const styles = {
   main: ['flex', 'flex-col', 'items-center', 'min-h-screen'].join(' '),

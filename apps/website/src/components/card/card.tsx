@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@ui/lib/utils';
 import { ReactNode, useRef, useState } from 'react';
 
 type Props = {
