@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
@@ -14,6 +16,16 @@ module.exports = {
       screens: {
         '2xl': '1400px',
       },
+    },
+    fontSize: {
+      sm: '0.8em',
+      base: '1em',
+      md: '1.5em',
+      lg: '3em',
+    },
+    screens: {
+      xs: '380px',
+      ...defaultTheme.screens,
     },
     extend: {
       colors: {
@@ -65,10 +77,44 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
+        'flip': {
+          to: {
+            transform: 'rotate(360deg)',
+          },
+        },
+        'rotate': {
+          to: {
+            transform: 'rotate(90deg)',
+          },
+        },
+        'dripping': {
+          to: {
+            transform: 'translateY(300px)',
+          },
+        },
+        'background-shine': {
+          from: {
+            backgroundPosition: '0 0',
+          },
+          to: {
+            backgroundPosition: '-200% 0',
+          },
+        },
+        'infinite-slider': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': {
+            transform: 'translateX(calc(-250px * 5))',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'flip': 'flip 6s infinite steps(2, end)',
+        'rotate': 'rotate 3s linear infinite both',
+        'dripping': 'dripping 6s linear infinite',
+        'background-shine': 'background-shine 2s linear infinite',
+        'infinite-slider': 'infinite-slider 40s linear infinite',
       },
     },
   },
