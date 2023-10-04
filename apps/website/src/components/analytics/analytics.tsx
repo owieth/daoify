@@ -1,4 +1,3 @@
-import GridVector from '../grid-vector/grid-vector';
 import H2 from '../text/h2';
 
 const Analytic = ({ label, value }: { label: string; value: number }) => {
