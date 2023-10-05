@@ -34,6 +34,7 @@
     "clsx": "^1.2.1",
     "cmdk": "^0.2.0",
     "lucide-react": "^0.244.0",
+    "recharts": "^2.8.0",
     "tailwind-merge": "^1.13.2",
     "tailwindcss-animate": "^1.0.6"
   }
