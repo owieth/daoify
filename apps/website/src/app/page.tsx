@@ -229,7 +229,7 @@ export default function Home() {
             <div>
               <FadeInContent delay={0.4}>
                 <h1 className="text-md font-bold md:text-lg">
-                  Building next-generation <br /> companies.
+                  Building next-generation <br /> companies and organizations.
                 </h1>
               </FadeInContent>
             </div>
