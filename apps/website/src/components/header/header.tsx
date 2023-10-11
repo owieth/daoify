@@ -1,12 +1,8 @@
 'use client';
 
 import { Popover, Transition } from '@headlessui/react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Fragment, useState, type ReactNode } from 'react';
-import ChevronDownIcon from '../icons/chevron-down';
-import CloseIcon from '../icons/close';
-import Logo from '../logo/logo';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@ui/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -15,9 +11,24 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@ui/components/ui/dialog';
-import { Label } from '@ui/components/ui/label';
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@ui/components/ui/form';
 import { Input } from '@ui/components/ui/input';
-import { Button } from '@ui/components/ui/button';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Fragment, useState, type ReactNode } from 'react';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
+import ChevronDownIcon from '../icons/chevron-down';
+import CloseIcon from '../icons/close';
+import Logo from '../logo/logo';
 
 const navigation = [
   { name: 'About', href: '/#about' },
@@ -262,7 +273,15 @@ const Header = () => {
     ].join(' '),
   };
 
-  const submitWaitlist = () => setOpen(!open);
+  const formSchema = z.object({
+    email: z.string().email(),
+  });
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+  });
+
+  const onSubmit = (values: z.infer<typeof formSchema>) => setOpen(!open);
 
   return (
     <>
@@ -275,7 +294,7 @@ const Header = () => {
       </header>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="bg-foreground sm:max-w-[425px]">
+        <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle className="text-md text-white">
               Join Waitlist
@@ -284,37 +303,27 @@ const Header = () => {
               We will let you know when it&apos;s time!
             </DialogDescription>
           </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right text-white">
-                Name
-              </Label>
-              <Input
-                id="name"
-                value="Max Muster"
-                className="col-span-3 text-black"
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="email" className="text-right text-white">
-                Email
-              </Label>
-              <Input
-                id="email"
-                value="max.muster@gmail.com"
-                className="col-span-3 text-black"
-              />
-            </div>
-          </div>
-          <DialogFooter>
-            <Button
-              className="bg-white text-black hover:bg-slate-300"
-              onClick={submitWaitlist}
-              type="submit"
-            >
-              Save my spot!
-            </Button>
-          </DialogFooter>
+
+              <DialogFooter>
+                <Button type="submit">Save my spot!</Button>
+              </DialogFooter>
+            </form>
+          </Form>
         </DialogContent>
       </Dialog>
     </>
