@@ -20,12 +20,11 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="grid h-full lg:grid-cols-5">
+    <div className="grid h-full gap-4 lg:grid-cols-5">
       <Sidebar />
       <div className="col-span-3 flex flex-col lg:col-span-4 lg:border-l">
         <div className="border-b">
           <div className="flex h-16 items-center px-4">
-            <TeamSwitcher />
             <MainNav className="mx-6" />
             <div className="ml-auto flex items-center space-x-4">
               <UserNav />
