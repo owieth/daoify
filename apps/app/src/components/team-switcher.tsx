@@ -42,6 +42,7 @@ import {
   SelectValue,
 } from '@ui/components/ui/select';
 import { cn } from '@ui/lib/utils';
+import Image from 'next/image';
 
 const groups = [
   {
@@ -86,15 +87,15 @@ export default function TeamSwitcher() {
             role="combobox"
             aria-expanded={open}
             aria-label="Select a team"
-            className="w-[200px] justify-between"
+            className="h-[50px] w-full justify-between rounded-xl pl-1 pr-4"
           >
-            <Avatar className="mr-2 h-5 w-5">
-              <AvatarImage
-                src={`https://avatar.vercel.sh/${selectedTeam.value}.png`}
-                alt={selectedTeam.label}
-              />
-              <AvatarFallback>SC</AvatarFallback>
-            </Avatar>
+            <Image
+              height={100}
+              width={100}
+              src={`https://avatar.vercel.sh/${selectedTeam.value}.png`}
+              alt={selectedTeam.label}
+              className="mr-2 h-10 w-10 rounded-lg"
+            />
             {selectedTeam.label}
             <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
           </Button>
@@ -163,34 +164,32 @@ export default function TeamSwitcher() {
             Add a new team to manage products and customers.
           </DialogDescription>
         </DialogHeader>
-        <div>
-          <div className="space-y-4 py-2 pb-4">
-            <div className="space-y-2">
-              <Label htmlFor="name">Team name</Label>
-              <Input id="name" placeholder="Acme Inc." />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="plan">Subscription plan</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a plan" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="free">
-                    <span className="font-medium">Free</span> -{' '}
-                    <span className="text-muted-foreground">
-                      Trial for two weeks
-                    </span>
-                  </SelectItem>
-                  <SelectItem value="pro">
-                    <span className="font-medium">Pro</span> -{' '}
-                    <span className="text-muted-foreground">
-                      $9/month per user
-                    </span>
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+        <div className="space-y-4 py-2 pb-4">
+          <div className="space-y-2">
+            <Label htmlFor="name">Team name</Label>
+            <Input id="name" placeholder="Acme Inc." />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="plan">Subscription plan</Label>
+            <Select>
+              <SelectTrigger>
+                <SelectValue placeholder="Select a plan" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="free">
+                  <span className="font-medium">Free</span> -{' '}
+                  <span className="text-muted-foreground">
+                    Trial for two weeks
+                  </span>
+                </SelectItem>
+                <SelectItem value="pro">
+                  <span className="font-medium">Pro</span> -{' '}
+                  <span className="text-muted-foreground">
+                    $9/month per user
+                  </span>
+                </SelectItem>
+              </SelectContent>
+            </Select>
           </div>
         </div>
         <DialogFooter>
