@@ -1,5 +1,6 @@
 import '@ui/styles/globals.css';
 import { Inter } from 'next/font/google';
+import { CommandMenu } from '../components/command-dialog';
 import { ThemeProvider } from '../providers/theme';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,6 +20,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <CommandMenu />
         </ThemeProvider>
       </body>
     </html>
