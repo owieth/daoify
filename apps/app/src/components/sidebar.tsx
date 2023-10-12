@@ -110,9 +110,7 @@ export function Sidebar() {
         </div>
       </div>
 
-      <div className="flex items-center space-x-4">
-        <UserNav />
-      </div>
+      <UserNav />
     </div>
   );
 }
