@@ -5,7 +5,6 @@ import { cn } from '@ui/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import TeamSwitcher from './team-switcher';
-import { ThemeToggle } from './theme-toggle';
 import { UserNav } from './user-nav';
 
 export function Sidebar() {
@@ -113,7 +112,6 @@ export function Sidebar() {
 
       <div className="flex items-center space-x-4">
         <UserNav />
-        <ThemeToggle />
       </div>
     </div>
   );

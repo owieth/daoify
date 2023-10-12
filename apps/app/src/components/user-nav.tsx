@@ -10,8 +10,12 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@ui/components/ui/dropdown-menu';
+import { Tabs, TabsList, TabsTrigger } from '@ui/components/ui/tabs';
+import { useTheme } from 'next-themes';
 
 export function UserNav() {
+  const { theme, themes, setTheme } = useTheme();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -38,23 +42,26 @@ export function UserNav() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
+          <DropdownMenuItem>Settings</DropdownMenuItem>
           <DropdownMenuItem>
-            Profile
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+            <Tabs defaultValue={theme} className="w-full">
+              <TabsList>
+                {themes.map((value, i) => (
+                  <TabsTrigger
+                    key={i}
+                    value={value}
+                    onClick={() => setTheme(value)}
+                  >
+                    {value}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </Tabs>
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            Billing
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            Settings
-            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>New Team</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          Log out
+          Sign out
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
