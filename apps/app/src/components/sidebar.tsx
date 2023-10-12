@@ -6,9 +6,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@ui/lib/utils';
 import { UserNav } from './user-nav';
+import { useTheme } from 'next-themes';
+import { ThemeToggle } from './theme-toggle';
 
 export function Sidebar() {
   const pathname = usePathname();
+  const { setTheme } = useTheme();
 
   const navbar = [
     {
@@ -66,6 +69,7 @@ export function Sidebar() {
 
       <div className="flex items-center space-x-4">
         <UserNav />
+        <ThemeToggle />
       </div>
     </div>
   );
