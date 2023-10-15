@@ -10,8 +10,10 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@ui/components/ui/dropdown-menu';
-import { Tabs, TabsList, TabsTrigger } from '@ui/components/ui/tabs';
 import { useTheme } from 'next-themes';
+import { IconMoon } from './icons/moon';
+import { IconSun } from './icons/sun';
+import { IconSystem } from './icons/system';
 
 export function UserNav() {
   const { theme, themes, setTheme } = useTheme();
@@ -39,19 +41,22 @@ export function UserNav() {
         <DropdownMenuGroup>
           <DropdownMenuItem>Settings</DropdownMenuItem>
           <DropdownMenuItem>
-            <Tabs defaultValue={theme} className="w-full">
-              <TabsList>
-                {themes.map((value, i) => (
-                  <TabsTrigger
-                    key={i}
-                    value={value}
-                    onClick={() => setTheme(value)}
-                  >
-                    {value}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
+            {themes.map((value, i) => (
+              <Button
+                key={i}
+                variant={theme === value ? 'default' : 'outline'}
+                size="icon"
+                onClick={() => setTheme(value)}
+              >
+                {value === 'light' ? (
+                  <IconSun className="h-4 w-4" />
+                ) : value === 'dark' ? (
+                  <IconMoon className="h-4 w-4" />
+                ) : (
+                  <IconSystem className="h-4 w-4" />
+                )}
+              </Button>
+            ))}
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
