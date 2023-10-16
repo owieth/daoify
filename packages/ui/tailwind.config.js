@@ -20,17 +20,17 @@ module.exports = {
         '2xl': '1400px',
       },
     },
-    fontSize: {
-      sm: '0.8em',
-      base: '1em',
-      md: '1.5em',
-      lg: '3em',
-    },
     screens: {
       xs: '380px',
       ...defaultTheme.screens,
     },
     extend: {
+      fontSize: {
+        sm: '0.8em',
+        base: '1em',
+        md: '1.5em',
+        lg: '3em',
+      },
       height: {
         screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh'],
       },
