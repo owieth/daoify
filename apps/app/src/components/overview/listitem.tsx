@@ -10,16 +10,18 @@ import {
   AvatarImage,
   AvatarOverflowIndicator,
 } from '@ui/components/ui/avatar';
+import { Button } from '@ui/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 export default function ListItem({ item }: { item: DaoType }) {
   return (
-    <Card className="hover:bg-slate-100">
+    <Card className="group">
       <Link href={`/${item.name}`}>
-        <CardContent className="flex items-center p-4">
+        <CardContent className="grid grid-cols-4 items-center p-4">
           <DaoAvatar src={item.image} alt={item.name} />
           <span>{item.name}</span>
 
-          <AvatarGroup limit={3}>
+          <AvatarGroup limit={3} className="justify-start">
             <AvatarGroupList>
               {item.members.map((member, i) => (
                 <Avatar key={i}>
@@ -30,6 +32,11 @@ export default function ListItem({ item }: { item: DaoType }) {
             </AvatarGroupList>
             <AvatarOverflowIndicator />
           </AvatarGroup>
+
+          <Button variant="outline" className="group-hover:bg-slate-100">
+            Details
+            <ArrowRight className="h-4 w-4" />
+          </Button>
         </CardContent>
       </Link>
     </Card>
