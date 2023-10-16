@@ -19,24 +19,24 @@ export function Sidebar() {
       },
       {
         label: 'Onboarding',
-        link: '/1',
+        link: '/onboarding',
         icon: null,
       },
       {
         label: 'Maintenance',
-        link: '/2',
+        link: '/maintenance',
         icon: null,
       },
     ],
     sites: [
       {
         label: 'Payments',
-        link: '/3',
+        link: '/payments',
         icon: null,
       },
       {
         label: 'Settings',
-        link: '/4',
+        link: '/settings',
         icon: null,
       },
     ],
