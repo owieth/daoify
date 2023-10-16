@@ -1,5 +1,5 @@
 import { Card, CardContent } from '@ui/components/ui/card';
-import { DaoType } from '../shared/types/models';
+import { DaoType } from '../../shared/types/models';
 
 export default function ListItem({ item }: { item: DaoType }) {
   return (

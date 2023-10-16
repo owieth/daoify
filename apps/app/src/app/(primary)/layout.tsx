@@ -1,4 +1,4 @@
-import { Sidebar } from '@/src/components/sidebar';
+import { Sidebar } from '@/src/components/layout/sidebar';
 import { Card } from '@ui/components/ui/card';
 
 export default function RootLayout({

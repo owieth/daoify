@@ -6,9 +6,9 @@ import {
   CardTitle,
 } from '@ui/components/ui/card';
 import { Metadata } from 'next';
-import { MainNav } from '../../../components/main-nav';
-import { Overview } from '../../../components/overview';
-import { RecentSales } from '../../../components/recent-sales';
+import { MainNav } from '../../../components/dashboard/main-nav';
+import { Overview } from '../../../components/dashboard/overview';
+import { RecentSales } from '../../../components/dashboard/recent-sales';
 
 export const metadata: Metadata = {
   title: 'Detail',

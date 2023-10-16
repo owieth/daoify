@@ -1,8 +1,8 @@
 import { Card, CardContent } from '@ui/components/ui/card';
 import { Metadata } from 'next';
-import { MainNav } from '../../components/main-nav';
+import { MainNav } from '../../components/dashboard/main-nav';
 import { DaoType } from '@/src/shared/types/models';
-import ListItem from '@/src/components/listitem';
+import ListItem from '@/src/components/overview/listitem';
 
 export const metadata: Metadata = {
   title: 'Dashboard',

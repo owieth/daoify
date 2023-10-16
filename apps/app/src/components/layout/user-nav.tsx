@@ -11,9 +11,9 @@ import {
   DropdownMenuTrigger,
 } from '@ui/components/ui/dropdown-menu';
 import { useTheme } from 'next-themes';
-import { IconMoon } from './icons/moon';
-import { IconSun } from './icons/sun';
-import { IconSystem } from './icons/system';
+import { IconMoon } from '../icons/moon';
+import { IconSun } from '../icons/sun';
+import { IconSystem } from '../icons/system';
 import { ConnectKitButton } from 'connectkit';
 import { Loader2 } from 'lucide-react';
 
