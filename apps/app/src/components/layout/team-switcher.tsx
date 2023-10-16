@@ -42,7 +42,7 @@ import {
   SelectValue,
 } from '@ui/components/ui/select';
 import { cn } from '@ui/lib/utils';
-import Image from 'next/image';
+import DaoAvatar from '../dao-avatar';
 
 const groups = [
   {
@@ -89,12 +89,9 @@ export default function TeamSwitcher() {
             aria-label="Select a team"
             className="h-[50px] w-full justify-between rounded-xl pl-1 pr-4"
           >
-            <Image
-              height={100}
-              width={100}
+            <DaoAvatar
               src={`https://avatar.vercel.sh/${selectedTeam.value}.png`}
               alt={selectedTeam.label}
-              className="mr-2 h-10 w-10 rounded-lg"
             />
             {selectedTeam.label}
             <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
