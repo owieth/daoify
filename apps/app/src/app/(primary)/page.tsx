@@ -2,6 +2,7 @@ import { Card, CardContent } from '@ui/components/ui/card';
 import { Metadata } from 'next';
 import { MainNav } from '../../components/main-nav';
 import { DaoType } from '@/src/shared/types/models';
+import ListItem from '@/src/components/listitem';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -66,12 +67,8 @@ export default async function DashboardPage() {
           <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
         </div>
         <div className="flex flex-col gap-4">
-          {daos.map((dao, i) => (
-            <Card key={i}>
-              <CardContent className="align-center flex p-4">
-                {dao.name}
-              </CardContent>
-            </Card>
+          {daos.map(dao => (
+            <ListItem item={dao} />
           ))}
         </div>
       </div>
