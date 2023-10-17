@@ -28,8 +28,8 @@ const Flow = ({ defaultValue, children, className }: Props) => (
 
 const FlowTabs = ({ children }: Props) => <TabsList>{children}</TabsList>;
 
-const FlowTab = ({ value }: Props) => (
-  <TabsTrigger value={kebabCase(value)} disabled>
+const FlowTab = ({ value, disabled }: Props) => (
+  <TabsTrigger value={kebabCase(value)} disabled={disabled}>
     {value}
   </TabsTrigger>
 );
