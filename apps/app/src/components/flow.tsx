@@ -5,26 +5,43 @@ import {
   TabsTrigger,
 } from '@ui/components/ui/tabs';
 import { kebabCase } from 'lodash';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { ReactNode } from 'react';
 
 type Props = {
   value?: string;
+  defaultValue?: string;
+  disabled?: boolean;
   className?: string;
   children?: ReactNode;
 };
 
-const Flow = ({ children, className }: Props) => (
-  <Tabs className={className}>{children}</Tabs>
+type FlowTriggerProps = {
+  onClick: () => void;
+} & Props;
+
+const Flow = ({ defaultValue, children, className }: Props) => (
+  <Tabs defaultValue={kebabCase(defaultValue)} className={className}>
+    {children}
+  </Tabs>
 );
 
-const FlowTriggers = ({ children }: Props) => <TabsList>{children}</TabsList>;
+const FlowTabs = ({ children }: Props) => <TabsList>{children}</TabsList>;
 
-const FlowTrigger = ({ value }: Props) => (
-  <TabsTrigger value={kebabCase(value)}>{value}</TabsTrigger>
+const FlowTab = ({ value }: Props) => (
+  <TabsTrigger value={kebabCase(value)} disabled>
+    {value}
+  </TabsTrigger>
+);
+
+const FlowTrigger = ({ value, disabled, onClick }: FlowTriggerProps) => (
+  <TabsTrigger value={kebabCase(value)} disabled={disabled} onClick={onClick}>
+    {value === 'front' ? <ArrowRight /> : <ArrowLeft />}
+  </TabsTrigger>
 );
 
 const FlowContent = ({ value, children }: Props) => (
   <TabsContent value={kebabCase(value)}>{children}</TabsContent>
 );
 
-export { Flow, FlowTriggers, FlowTrigger, FlowContent };
+export { Flow, FlowContent, FlowTab, FlowTabs, FlowTrigger };
