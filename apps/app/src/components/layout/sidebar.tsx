@@ -6,11 +6,25 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from '../logo/logo';
 import { UserNav } from './user-nav';
+import { ReactNode } from 'react';
+
+type SidebarItemType = {
+  label: string;
+  link: string;
+  icon: ReactNode;
+};
 
 export function Sidebar() {
   const pathname = usePathname();
 
   const navbar = {
+    ctas: [
+      {
+        label: 'Create DAO',
+        link: '/new',
+        icon: null,
+      },
+    ],
     phases: [
       {
         label: 'Dashboard',
@@ -18,8 +32,8 @@ export function Sidebar() {
         icon: null,
       },
       {
-        label: 'Onboarding',
-        link: '/onboarding',
+        label: 'Payments',
+        link: '/payments',
         icon: null,
       },
       {
@@ -30,8 +44,8 @@ export function Sidebar() {
     ],
     sites: [
       {
-        label: 'Payments',
-        link: '/payments',
+        label: 'Overview',
+        link: '/overview',
         icon: null,
       },
       {
@@ -40,6 +54,37 @@ export function Sidebar() {
         icon: null,
       },
     ],
+  };
+
+  const renderLinkItem = (item: SidebarItemType, i: number) => {
+    const isActive = pathname === item.link;
+    return (
+      <Button
+        key={i}
+        variant={isActive ? 'outline' : 'ghost'}
+        className={cn(
+          'w-full justify-start',
+          isActive && 'bg-white text-black',
+        )}
+      >
+        <Link href={item.link} className="flex w-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="mr-2 h-4 w-4"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polygon points="10 8 16 12 10 16 10 8" />
+          </svg>
+          {item.label}
+        </Link>
+      </Button>
+    );
   };
 
   return (
@@ -52,70 +97,17 @@ export function Sidebar() {
 
         <div className="my-2 w-full border" />
 
-        <div className="mt-2 space-y-2">
-          {navbar.phases.map((item, i) => {
-            const isActive = pathname === item.link;
-            return (
-              <Button
-                key={i}
-                variant={isActive ? 'outline' : 'ghost'}
-                className={cn(
-                  'w-full justify-start',
-                  isActive && 'bg-white text-black',
-                )}
-              >
-                <Link href={item.link} className="flex w-full">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="mr-2 h-4 w-4"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <polygon points="10 8 16 12 10 16 10 8" />
-                  </svg>
-                  {item.label}
-                </Link>
-              </Button>
-            );
-          })}
-        </div>
+        <div className="mt-2 space-y-2">{navbar.ctas.map(renderLinkItem)}</div>
 
         <div className="my-2 w-full border" />
 
         <div className="mt-2 space-y-2">
-          {navbar.sites.map((item, i) => {
-            const isActive = pathname === item.link;
-            return (
-              <Button
-                key={i}
-                variant={isActive ? 'outline' : 'ghost'}
-                className={cn('w-full justify-start', isActive && 'bg-white')}
-              >
-                <Link href={item.link} className="flex w-full">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="mr-2 h-4 w-4"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <polygon points="10 8 16 12 10 16 10 8" />
-                  </svg>
-                  {item.label}
-                </Link>
-              </Button>
-            );
-          })}
+          {navbar.phases.map(renderLinkItem)}
         </div>
+
+        <div className="my-2 w-full border" />
+
+        <div className="mt-2 space-y-2">{navbar.sites.map(renderLinkItem)}</div>
       </div>
 
       <UserNav />
