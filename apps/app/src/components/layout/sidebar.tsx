@@ -46,7 +46,7 @@ export function Sidebar() {
     <div className="flex flex-col justify-between">
       <div>
         <div className="flex items-center gap-4">
-          <Logo height={25} width={25} className="text-black" />
+          <Logo height={25} width={25} className="text-black dark:text-white" />
           <h1 className="text-md font-bold">DAOify</h1>
         </div>
 
@@ -59,7 +59,10 @@ export function Sidebar() {
               <Button
                 key={i}
                 variant={isActive ? 'outline' : 'ghost'}
-                className={cn('w-full justify-start', isActive && 'bg-white')}
+                className={cn(
+                  'w-full justify-start',
+                  isActive && 'bg-white text-black',
+                )}
               >
                 <Link href={item.link} className="flex w-full">
                   <svg
