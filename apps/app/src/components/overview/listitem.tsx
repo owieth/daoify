@@ -33,7 +33,10 @@ export default function ListItem({ item }: { item: DaoType }) {
             <AvatarOverflowIndicator />
           </AvatarGroup>
 
-          <Button variant="outline" className="group-hover:bg-slate-100">
+          <Button
+            variant="outline"
+            className="group-hover:bg-slate-100 dark:group-hover:text-black"
+          >
             Details
             <ArrowRight className="h-4 w-4" />
           </Button>
