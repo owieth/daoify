@@ -4,7 +4,7 @@ import { Button } from '@ui/components/ui/button';
 import { cn } from '@ui/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import TeamSwitcher from './team-switcher';
+import Logo from '../logo/logo';
 import { UserNav } from './user-nav';
 
 export function Sidebar() {
@@ -45,7 +45,12 @@ export function Sidebar() {
   return (
     <div className="flex flex-col justify-between">
       <div>
-        <TeamSwitcher />
+        <div className="flex items-center gap-4">
+          <Logo height={25} width={25} className="text-black" />
+          <h1 className="text-md font-bold">DAOify</h1>
+        </div>
+
+        <div className="my-2 w-full border" />
 
         <div className="mt-2 space-y-2">
           {navbar.phases.map((item, i) => {
