@@ -28,7 +28,7 @@ export function Sidebar() {
     phases: [
       {
         label: 'Dashboard',
-        link: '/',
+        link: '/dashboard',
         icon: null,
       },
       {
@@ -45,7 +45,7 @@ export function Sidebar() {
     sites: [
       {
         label: 'Overview',
-        link: '/overview',
+        link: '/',
         icon: null,
       },
     ],

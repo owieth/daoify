@@ -6,7 +6,6 @@ import {
   CardTitle,
 } from '@ui/components/ui/card';
 import { Metadata } from 'next';
-import { MainNav } from '../../../components/dashboard/main-nav';
 import { Overview } from '../../../components/dashboard/overview';
 import { RecentSales } from '../../../components/dashboard/recent-sales';
 
