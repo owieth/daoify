@@ -17,7 +17,7 @@ export const WALLET_PROVIDER = createWalletClient({
 });
 
 export const CONTRACT_ADDRESS_SEPOLIA =
-  '0x3cc232b06e306f83ce3e729aa7f4673e250bf570';
+  '0xC557Cf569BD417BA656ff4bE5070C1DB7d8740E2';
 
 export const CONTRACT = {
   address: CONTRACT_ADDRESS_SEPOLIA as Address,
