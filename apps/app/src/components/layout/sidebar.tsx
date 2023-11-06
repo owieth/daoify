@@ -48,11 +48,6 @@ export function Sidebar() {
         link: '/overview',
         icon: null,
       },
-      {
-        label: 'Settings',
-        link: '/settings',
-        icon: null,
-      },
     ],
   };
 
