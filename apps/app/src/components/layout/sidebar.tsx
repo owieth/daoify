@@ -1,6 +1,7 @@
 'use client';
 
 import { CONTRACT } from '@/src/contracts/contracts';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@ui/components/ui/button';
 import {
   Dialog,
@@ -12,22 +13,23 @@ import {
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
+  FormLabel,
   FormMessage,
 } from '@ui/components/ui/form';
 import { Input } from '@ui/components/ui/input';
 import { cn } from '@ui/lib/utils';
+import { useModal } from 'connectkit';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ReactNode, useState } from 'react';
+import { useFieldArray, useForm } from 'react-hook-form';
 import { useAccount, useContractWrite, usePrepareContractWrite } from 'wagmi';
+import * as z from 'zod';
 import Logo from '../logo/logo';
 import { UserNav } from './user-nav';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { useModal } from 'connectkit';
 
 type SidebarItemType = {
   label: string;
@@ -38,7 +40,20 @@ type SidebarItemType = {
 
 const FormSchema = z.object({
   name: z.string(),
+  owner: z.string(),
+  members: z.array(
+    z.object({
+      value: z.string(),
+    }),
+  ),
+  imageUri: z.string(),
 });
+
+type FormValues = z.infer<typeof FormSchema>;
+
+const defaultValues: Partial<FormValues> = {
+  members: [{ value: '' }],
+};
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -51,6 +66,13 @@ export function Sidebar() {
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
+    defaultValues,
+    mode: 'onChange',
+  });
+
+  const { fields, append } = useFieldArray({
+    name: 'members',
+    control: form.control,
   });
 
   const { watch } = form;
@@ -59,8 +81,8 @@ export function Sidebar() {
 
   const { config, error } = usePrepareContractWrite({
     ...CONTRACT,
-    functionName: 'safeMint',
-    args: [address],
+    functionName: 'createDAO',
+    args: [address, formData.name, formData.members, formData.imageUri],
     onSuccess() {
       setDialogOpen(false);
     },
@@ -203,8 +225,75 @@ export function Sidebar() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormDescription>Give your DAO a name.</FormDescription>
                       <FormControl>
-                        <Input placeholder="DAO Name" {...field} />
+                        <Input placeholder="Name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="owner"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Owner</FormLabel>
+                      <FormDescription>Give your DAO an onwer.</FormDescription>
+                      <FormControl>
+                        <Input placeholder="Owner" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <div>
+                  {fields.map((field, index) => (
+                    <FormField
+                      control={form.control}
+                      key={field.id}
+                      name={`members.${index}.value`}
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className={cn(index !== 0 && 'sr-only')}>
+                            Members
+                          </FormLabel>
+                          <FormDescription
+                            className={cn(index !== 0 && 'sr-only')}
+                          >
+                            Add your Member's addresses.
+                          </FormDescription>
+                          <FormControl>
+                            <Input {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  ))}
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    className="mt-2"
+                    onClick={() => append({ value: '' })}
+                  >
+                    Add URL
+                  </Button>
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="imageUri"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Image Uri</FormLabel>
+                      <FormDescription>Give your DAO an image.</FormDescription>
+                      <FormControl>
+                        <Input placeholder="Image" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
