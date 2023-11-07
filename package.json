@@ -10,12 +10,12 @@
     "prettier": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@turbo/gen": "^1.9.7",
-    "eslint": "^7.32.0",
+    "@turbo/gen": "^1.10.16",
+    "eslint": "^8.53.0",
     "eslint-config-custom": "*",
     "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.4",
-    "turbo": "^1.10.14"
+    "prettier-plugin-tailwindcss": "^0.5.6",
+    "turbo": "^1.10.16"
   },
   "packageManager": "yarn@1.22.15",
   "workspaces": [
