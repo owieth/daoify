@@ -1,9 +1,8 @@
 import '@ui/styles/globals.css';
 import { Inter } from 'next/font/google';
 import { CommandMenu } from '../components/layout/command-dialog';
-import { ThemeProvider } from '../providers/theme';
 import ConnectKitProvider from '../providers/connectkit';
-import { ConnectKitButton } from 'connectkit';
+import { ThemeProvider } from '../providers/theme';
 
 const inter = Inter({ subsets: ['latin'] });
 
