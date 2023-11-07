@@ -51,10 +51,6 @@ const FormSchema = z.object({
 
 type FormValues = z.infer<typeof FormSchema>;
 
-const defaultValues: Partial<FormValues> = {
-  members: [{ value: '' }],
-};
-
 export function Sidebar() {
   const pathname = usePathname();
 
@@ -63,6 +59,11 @@ export function Sidebar() {
   const { setOpen } = useModal();
 
   const { address } = useAccount();
+
+  const defaultValues: Partial<FormValues> = {
+    owner: address,
+    members: [{ value: '' }],
+  };
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -82,7 +83,7 @@ export function Sidebar() {
   const { config, error } = usePrepareContractWrite({
     ...CONTRACT,
     functionName: 'createDAO',
-    args: [address, formData.name, formData.members, formData.imageUri],
+    args: [formData.owner, formData.name, formData.members, formData.imageUri],
     onSuccess() {
       setDialogOpen(false);
     },
