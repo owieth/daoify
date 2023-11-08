@@ -91,15 +91,6 @@ export function Sidebar() {
   const renderLinkItem = (item: SidebarItemType, i: number) => {
     const isActive = pathname === item.link;
 
-    const LinkWrapper = ({ children }: { children: ReactNode }) =>
-      item.cta ? (
-        children
-      ) : (
-        <Link href={item.link} className="flex w-full">
-          {children}
-        </Link>
-      );
-
     return (
       <Button
         key={i}
@@ -114,7 +105,7 @@ export function Sidebar() {
           renderContent(item)
         ) : (
           <Link href={item.link} className="flex w-full">
-            renderContent(item)
+            {renderContent(item)}
           </Link>
         )}
       </Button>
